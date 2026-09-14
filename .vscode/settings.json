@@ -1,7 +1,32 @@
 {
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit",
-    "source.organizeImports": "explicit",
-    "source.sortMembers": "explicit"
-  }
+   "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit",
+      "source.sortMembers": "explicit"
+   },
+   "files.exclude": {
+      "**/flutter/ephemeral": false,
+      "**/Flutter/ephemeral": false,
+      "**/.symlinks": false,
+      "**/.plugin_symlinks": false,
+      "package-lock.json": false,
+      "postcss.config.mjs": false,
+      "react-native-css-env.d.ts": false,
+      "README.md": false,
+      "CLAUDE.md": false,
+      "expo-env.d.ts": false,
+      "LICENSE": false,
+      "metro.config.js": false,
+      "nativewind-env.d.ts": false,
+      ".env": false,
+      ".gitignore": false,
+      ".npmrc": false,
+      "AGENTS.md": false,
+      "example": false,
+      ".vscode": false,
+      ".expo": false,
+      ".claude": false,
+      "node_modules": false,
+      "assets": false
+   }
 }
