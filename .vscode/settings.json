@@ -1,9 +1,4 @@
 {
-   "editor.codeActionsOnSave": {
-      "source.fixAll": "explicit",
-      "source.organizeImports": "explicit",
-      "source.sortMembers": "explicit"
-   },
    "files.exclude": {
       "**/flutter/ephemeral": false,
       "**/Flutter/ephemeral": false,
@@ -28,5 +23,19 @@
       ".claude": false,
       "node_modules": false,
       "assets": false
-   }
+   },
+   "editor.codeActionsOnSave": {
+      "source.organizeImports": "never",
+      "source.removeUnused.ts": "never",
+      "source.addMissingImports.ts": "never",
+      "source.fixAll.eslint": "never",
+      "source.removeUnusedImports": "never"
+   },
+   "eslint.codeActionsOnSave.mode": "problems",
+   "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/.expo/**": true,
+    "**/android/**": true,
+    "**/ios/**": true
+  }
 }
