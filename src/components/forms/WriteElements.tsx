@@ -1,10 +1,19 @@
 // import WriteOption from '@/components/forms/WriteOption';
 import { Button, ButtonText, Card, Checkbox, CheckboxIcon, CheckboxIndicator, CheckboxLabel, FormControl, FormControlError, FormControlErrorIcon, FormControlErrorText, FormControlLabel, FormControlLabelText, HStack, Icon, Input, InputField, Textarea, TextareaInput } from '@/gluestack/index';
 import { Check, CircleAlert, CirclePlus } from 'lucide-react-native';
-import { Controller } from 'react-hook-form';
-import { Pressable, Text } from 'react-native';
 
-export const QuestionTextInput = ({control, handleQuestionChange, error}) => {
+import { Controller, type UseFormHandleSubmit, type SubmitHandler } from 'react-hook-form';
+import { Pressable, Text } from 'react-native';
+import type { OptionFormInput } from '@/src/types'
+
+type SubmitOrCancelButtonsProps = { 
+   handleSubmit:UseFormHandleSubmit<OptionFormInput>, 
+   submit:SubmitHandler<OptionFormInput>, 
+   cancel: () => void 
+   preview: (() => void) | null
+}
+
+export const QuestionTextInput = ({control, error}) => {
    return (
       <FormControl isRequired={true} isInvalid={!!error}>
          <FormControlLabel>
@@ -16,10 +25,7 @@ export const QuestionTextInput = ({control, handleQuestionChange, error}) => {
             rules={{ required: 'Question text required', }}
             render={({ field: { onChange, value } }) => (
                <Input className='bg-white'>
-                  <InputField placeholder='Question...' value={value} onChangeText={(text) => {
-                     handleQuestionChange(text, 'label')
-                     onChange(text)
-                  }} />
+                  <InputField placeholder='Question...' value={value} onChangeText={onChange} />
                </Input>
             )}
          />
@@ -28,7 +34,7 @@ export const QuestionTextInput = ({control, handleQuestionChange, error}) => {
    )
 }
 
-export const AddDescriptionCheckbox = ({control, setDisplayDescription}) => {
+export const AddDescriptionCheckbox = ({control, update}) => {
    return (
       <Controller 
          name='showDesc'
@@ -38,7 +44,7 @@ export const AddDescriptionCheckbox = ({control, setDisplayDescription}) => {
                isChecked={value} 
                value='show-description' 
                onChange={(checked) => {
-                  setDisplayDescription(checked)
+                  update(checked)
                   onChange(checked)
                }}>
                <CheckboxIndicator>
@@ -51,7 +57,7 @@ export const AddDescriptionCheckbox = ({control, setDisplayDescription}) => {
    )
 }
 
-export const IsRequiredCheckbox = ({control, handleQuestionChange}) => {
+export const IsRequiredCheckbox = ({control}) => {
    return (
       <Controller 
          name='required'
@@ -60,10 +66,7 @@ export const IsRequiredCheckbox = ({control, handleQuestionChange}) => {
             <Checkbox className='' 
                isChecked={value} 
                value='is-required' 
-               onChange={(checked) => {
-                  handleQuestionChange(checked, 'required')
-                  onChange(checked)
-               }}>
+               onChange={onChange}>
                <CheckboxIndicator>
                   <CheckboxIcon as={Check} />
                </CheckboxIndicator>
@@ -74,7 +77,7 @@ export const IsRequiredCheckbox = ({control, handleQuestionChange}) => {
    )
 }
 
-export const DescriptionTextInput = ({control, handleQuestionChange, error}) => {
+export const DescriptionTextInput = ({control, error}) => {
    return (
       <FormControl isRequired={true} isInvalid={!!error}>
          <Controller 
@@ -83,10 +86,7 @@ export const DescriptionTextInput = ({control, handleQuestionChange, error}) => 
             rules={{ required: 'Description text required', }}
             render={({ field: { onChange, value } }) => (
                <Textarea className='bg-white'>
-                  <TextareaInput placeholder='Add description...' value={value} onChangeText={(text) => {
-                     handleQuestionChange(text, 'description')
-                     onChange(text)
-                  }} />
+                  <TextareaInput placeholder='Add description...' value={value} onChangeText={onChange} />
                </Textarea>
             )}
          /> 
@@ -95,12 +95,15 @@ export const DescriptionTextInput = ({control, handleQuestionChange, error}) => 
    )
 }
 
-export const SubmitOrCancelButtons = ({handleSubmit, submit, cancel}) => {
+export const SubmitOrCancelButtons = ({ handleSubmit, submit, cancel, preview}: SubmitOrCancelButtonsProps) => {
    return (
       <HStack space='lg'>
          <Button size='sm' onPress={handleSubmit(submit)}>
             <ButtonText>Submit</ButtonText>
          </Button>
+         { preview && ( <Button size='sm' onPress={preview}>
+            <ButtonText>Preview</ButtonText>
+         </Button> )}
          <Button size='sm' onPress={cancel}>
             <ButtonText>Cancel</ButtonText>
          </Button>

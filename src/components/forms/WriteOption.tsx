@@ -1,37 +1,39 @@
 import { AddOptionRow, Error, SubmitOrCancelButtons } from '@/components/forms/WriteElements';
 import { Card, FormControl, FormControlLabel, FormControlLabelText, Input, InputField, VStack } from '@/gluestack/index';
-import type { Option } from '@/src/types';
+import type { Option, OptionFormInput } from '@/src/types';
 import { useEffect, useState } from 'react';
 import { Controller, useForm, type DefaultValues } from 'react-hook-form';
 
-type OptionFormInput = { option:string }
+const WriteOption = ({current, selection, append}) => {
 
-const WriteOption = ({current, selection, append, fields}) => {
-   const formDefault:DefaultValues<OptionFormInput> = { option: '' }
+   const formDefault:DefaultValues<OptionFormInput> = { label: '' }
    const [displayOptionInput, setDisplayOptionInput] = useState(false)
-
-   const { handleSubmit, control, reset, formState: { errors } } = useForm({ defaultValues: formDefault });
+   const { handleSubmit, control, reset, formState: { errors } } = useForm<OptionFormInput>({ defaultValues: formDefault });
 
    const onSubmit = (data:OptionFormInput) => {
-      const output:Option = { id: current.length, label: data.option, value: selection.id === 4 ? Number.parseInt(data.option) : data.option.toLowerCase() } 
+      const output:Option = { index: current.length, label: data.label, value: selection.id === 4 ? Number.parseInt(data.label) : data.label.toLowerCase() } 
       append(output)
       setDisplayOptionInput(false)
    }
-
-   useEffect(() => {
-      reset()
-   }, [displayOptionInput])
+   const cancel = () => { 
+      setDisplayOptionInput(false)
+      reset() 
+   }
+   
+   // useEffect(() => {
+   //    reset()
+   // }, [displayOptionInput])
 
    return (
       <VStack space='md'>
          { displayOptionInput ? (
             <Card>
-         <FormControl isRequired={true} isInvalid={!!errors?.option}>
+         <FormControl isRequired={true} isInvalid={!!errors?.label}>
          <FormControlLabel>
             <FormControlLabelText>Enter option</FormControlLabelText>
          </FormControlLabel>
          <Controller
-            name='option'
+            name='label'
             control={control}
             rules={{ required: 'Option text required',}}
             render={({ field: { value, onChange } }) => (
@@ -40,9 +42,9 @@ const WriteOption = ({current, selection, append, fields}) => {
                </Input>
             )}
          />
-         { errors.option && <Error message={errors.option.message} /> }
+         { errors.label && <Error message={errors.label.message} /> }
       </FormControl>
-         <SubmitOrCancelButtons handleSubmit={handleSubmit} submit={onSubmit} cancel={() => setDisplayOptionInput(false)} />
+         <SubmitOrCancelButtons handleSubmit={handleSubmit} submit={onSubmit} cancel={cancel} preview={null} />
       </Card>
          )
          : <AddOptionRow setDisplayOptionInput={setDisplayOptionInput} /> }

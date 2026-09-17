@@ -1,24 +1,19 @@
-import { Button, ButtonText, FormControl, FormControlLabel, FormControlLabelText, HStack, Select, SelectBackdrop, SelectContent, SelectDragIndicator, SelectDragIndicatorWrapper, SelectIcon, SelectInput, SelectItem, SelectPortal, SelectTrigger, VStack } from '@/gluestack/index';
-import { Menu, MenuItem, MenuItemLabel } from '@/gluestack/index';
+import { Button, ButtonText, HStack, Select, SelectBackdrop, SelectContent, SelectDragIndicator, SelectDragIndicatorWrapper, SelectIcon, SelectInput, SelectItem, SelectPortal, SelectTrigger, VStack } from '@/gluestack/index';
+import {FormControl, FormControlError, FormControlErrorIcon, FormControlErrorText, FormControlLabel, FormControlLabelText} from '@/gluestack/form-control'
 import { questionBase } from '@/src/constants/questions';
 import type { QuestionBase } from '@/src/types';
-import { ChevronDownIcon } from 'lucide-react-native';
-import { useEffect } from 'react';
-import { Controller, useController, useForm, type DefaultValues } from 'react-hook-form';
-import { Text } from 'react-native';
+import { ChevronDownIcon, CircleAlert } from 'lucide-react-native';
+import { useController, useForm, type DefaultValues, type FieldErrors } from 'react-hook-form';
 
-type DropDownProps = { control:any, name:string, label:string, options:QuestionBase[] }
-
+type FormInput = { selectedType:QuestionBase | null }
+const formDefault:DefaultValues<FormInput> = { selectedType: null }
 
 const QuestionSelect = ({updateSelect}) => {
-   type FormInput = { selectedType:QuestionBase | null }
-   const formDefault:DefaultValues<FormInput> = { selectedType: null }
-   const { control, handleSubmit, watch } = useForm<FormInput>({ defaultValues: formDefault });
-   const testWatch = watch()
+   const { control, handleSubmit } = useForm<FormInput>({ defaultValues: formDefault });
+
    return (
       <HStack space='lg'>
-         {/* <Dropdown control={control} name='selectedType' label='Select Question Type' options={questionBase} /> */}
-         <SelectionMenu control={control} name='selectedType' label='Select Question Type' options={questionBase} />
+         <Dropdown control={control} name='selectedType' label='Select Question Type' options={questionBase} />
          <Button onPress={handleSubmit(updateSelect)}>
             <ButtonText>Select</ButtonText>
          </Button>
@@ -26,11 +21,15 @@ const QuestionSelect = ({updateSelect}) => {
    );
 }
 
-const Dropdown = ({control, name, label, options}:DropDownProps) => {
-   const { field: { onChange, value } } = useController({ control, name });
+type DropDownProps = { control:any, name:string, label:string, options:QuestionBase[]
+   // , errors: FieldErrors<FormInput> 
+}
 
+const Dropdown = ({control, name, label, options}:DropDownProps) => {
+   const { field: { onChange, value }, fieldState: { invalid, error } } = useController({ control, name, rules: { required: 'Must select question type'} });
+   
    return (
-      <FormControl className='flex-1'>
+      <FormControl className='flex-1' isRequired={true} isInvalid={invalid}>
          <FormControlLabel>
             <FormControlLabelText>{label}</FormControlLabelText>
          </FormControlLabel>
@@ -52,42 +51,22 @@ const Dropdown = ({control, name, label, options}:DropDownProps) => {
                </SelectContent>
             </SelectPortal>
          </Select>
+         <FormControlError>
+            <FormControlErrorIcon as={CircleAlert} /> 
+            <FormControlErrorText>{error?.message}</FormControlErrorText>
+         </FormControlError>
+         {/* { errors?.selectedType && <Error errors={errors.selectedType} />} */}
       </FormControl>
    )
 }
 
-const SelectionMenu = ({control, name, label, options}:DropDownProps) => {
-   const { field: { onChange, value } } = useController({ control, name });
-   return (
-      <FormControl>
-         <FormControlLabel>
-            <FormControlLabelText>{label}</FormControlLabelText>
-         </FormControlLabel>
-         <Controller 
-            control={control}
-            name={name}
-            rules={{ required: 'Please select a question type' }}
-            render={({ field: { onChange, value }, fieldState: { error } }) => (
-               <VStack space='md'>
-                  <Menu placement='bottom left' offset={5} disabledKeys={['Settings']} closeOnSelect={true}
-                     trigger={({ ...triggerProps }) => {
-                        return (
-                           <Button {...triggerProps}>
-                              <ButtonText>{'Select'}</ButtonText>
-                           </Button>
-                        );
-                     }}>
-                     {options.map((opt) => (
-                        <MenuItem key={opt.id} textValue={opt.type} onPress={() => onChange(opt)}>
-                           <MenuItemLabel>{opt.typeLabel}</MenuItemLabel>
-                        </MenuItem> ))}
-                  </Menu>
-                  { error && <Text>{error.message}</Text> }
-               </VStack>
-            )}
-          />
-      </FormControl>
-   )
-}
+// const Error = ({errors}) => {
+//    return (
+//       <FormControlError>
+//          <FormControlErrorIcon as={CircleAlert} /> 
+//          <FormControlErrorText>{errors.message}</FormControlErrorText>
+//       </FormControlError>
+//    )
+// }
 
 export default QuestionSelect;

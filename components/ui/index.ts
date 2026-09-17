@@ -8,7 +8,7 @@ export * from './heading';
 export * from './hstack';
 export * from './icon';
 export * from './input';
-export * from './menu';
+// export * from './menu';
 export * from './radio';
 export * from './select';
 export * from './table';

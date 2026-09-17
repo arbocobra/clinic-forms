@@ -9,7 +9,7 @@ export type Question = {
    options?: Option[];
 };
 export type Option = {
-   id: number;
+   index: number;
    label: string;
    value: string | number;
 };
@@ -18,3 +18,4 @@ export type QuestionBase = Pick<Question, 'id' | 'type' | 'typeLabel' | 'inputTy
 export type QuestionFormInput = Pick<Question, 'label' | 'description' | 'required' | 'options'> & {
    showDesc: boolean;
 };
+export type OptionFormInput = Pick<Option, 'label'>

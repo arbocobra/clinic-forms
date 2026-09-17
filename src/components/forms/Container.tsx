@@ -1,6 +1,6 @@
 import { Divider, VStack } from '@/gluestack/index';
 import AddQuestion from '@/src/components/forms/AddQuestion';
-import DisplayQuestion from '@/src/components/forms/DisplayQuestion';
+import DisplayPreview from '@/src/components/forms/DisplayPreview';
 import QuestionList from '@/src/components/forms/QuestionList';
 import type { Question, QuestionBase, QuestionDisplay, QuestionFormInput } from '@/src/types';
 import { useEffect, useState } from 'react';
@@ -11,32 +11,66 @@ const Container = () => {
    const [questionArray, setQuestionArray] = useState<Question[]>([])
    const [selection, setSelection] = useState<QuestionBase | null>(null)
    const [question, setQuestion] = useState<QuestionDisplay>(initialValue)
-
+   const [showPreview, setShowPreview] = useState(false)
+   // 2
    const onSubmit = (data:QuestionFormInput) => {
+      // console.log('on submit')
       if (!selection) return
       const {id, ...base} = selection
       const { showDesc, ...output } = data;
       const result:Question = {...base, ...output, id: questionArray.length}
-      setQuestionArray([...questionArray, result])
+      updateQuestionArray('add', result)
    }
 
-   const handleQuestionChange = (data:string, cat:string) => {
-      setQuestion(prev => ({ ...prev, [cat]: data }))
+   const openPreview = (data:QuestionFormInput) => {
+      setQuestion(() => {
+         const { showDesc, ...output } = data;
+         setShowPreview(true);
+         return output;
+      })
    }
 
+   // 3
+   const updateQuestionArray = (action:string, data:Question) => {
+      // console.log('updateQuestionArray ')
+      if (action === 'add') {
+         const update = questionArray.length ? [...questionArray, data] : [data];
+         setQuestionArray(update)
+      }
+      // setQuestionArray((prev) => {
+      //    const update = [...prev, data]
+      //    resetQuestion();
+      //    return update;
+      // })
+   }
+   // 6
+   const resetQuestion = () => {
+      // console.log('resetQuestion')
+      setQuestion(() => {
+         setSelection(null)
+         return initialValue;
+      })
+   }
+   // 9
+   // useEffect(() => {
+   //    console.log('setSelection ', selection)
+   // }, [selection])
+
+   // useEffect(() => {
+   //    console.log('setQuestion ', question)
+   // }, [question])
+   // 7
    useEffect(() => {
-      console.log(questionArray)
-      setQuestion(initialValue)
-      setSelection(null)
+      console.log('setQuestionArray ', questionArray)
    }, [questionArray])
 
    return (
       <VStack className='flex-1' space='md'>
          <QuestionList questionArray={questionArray} />
          <Divider />
-         <AddQuestion selection={selection} setSelection={setSelection} handleQuestionChange={handleQuestionChange} onSubmit={onSubmit} />
+         <AddQuestion selection={selection} setSelection={setSelection} onSubmit={onSubmit} openPreview={openPreview} resetQuestion={resetQuestion} />
          <Divider />
-         <DisplayQuestion selection={selection} question={question} />
+         <DisplayPreview showPreview={showPreview} close={() => setShowPreview(false)} selection={selection} question={question} />
       </VStack>
    )
 }
