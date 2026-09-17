@@ -13,13 +13,12 @@ import { Textarea, TextareaInput } from '@/gluestack/textarea'
 import { Icon } from '@/gluestack/icon';
 import { Card } from '@/gluestack/card';
 import { Check, CircleAlert, CirclePlus, SquarePen, Trash } from 'lucide-react-native';
-import { Pressable, Text, View } from 'react-native';
+import { Pressable, Text, View, KeyboardAvoidingView } from 'react-native';
 
 type CreateQuestionsProps = { setIsSelecting: Dispatch<SetStateAction<boolean>>, selection:QuestionBase, onSubmit: (i:QuestionFormInput) => void, openPreview:(i:QuestionFormInput) => void, resetQuestion: () => void }
 type WriteOptionProps = { fields:FieldArrayWithId<QuestionFormInput, 'options'>[], inputType:string, append:(obj:Option) => void, remove:(index:number)=>void, replace:(obj:Option) => void }
 type DisplayOptionsRowProps = Pick<WriteOptionProps, 'fields' | 'remove'> & { updateIsEdit: (i:number) => void }
 type OptionTextInputProps = {field:null | FieldArrayWithId<QuestionFormInput, 'options', 'id'> }
-// FieldArrayWithId<FormValues, 'todos', 'id'>
 
 const formDefault:DefaultValues<QuestionFormInput> = { label: '', showDesc: false, required: true, description: '', options: [] }
 const optionFormDefault:DefaultValues<OptionFormInput> = { label: '' }
@@ -37,11 +36,7 @@ const CreateQuestions = ({ setIsSelecting, selection, onSubmit, openPreview, res
       resetQuestion();
       setIsSelecting(true)
    }
-   // 1
-   // const submit = () => {
-   //    console.log('submit ')
-   //    methodsOne.handleSubmit(onSubmit, onError)();
-   // }
+
    const cancel = () => {
       // console.log('cancel ')
       reset();
@@ -52,29 +47,31 @@ const CreateQuestions = ({ setIsSelecting, selection, onSubmit, openPreview, res
       openPreview(data);
    }
 
-   // const onError = () => {
-   //    console.log('error ', methodsOne.getErrors())
-   // }
-   // 4
+   const form = methodsOne.watch()
+
    useEffect(() => {
-      // console.log('isSubmitSuccessful ', methodsOne.formState.isSubmitSuccessful)
       if (methodsOne.formState.isSubmitSuccessful) {
          reset()
       }
    }, [methodsOne.formState.isSubmitSuccessful])
 
    return (
-      <VStack space='md'>
-         <FormProvider {...methodsOne}>
-            <WriteQuestion />
-         </FormProvider>
-         <FormProvider {...methodsTwo}>
-            { selection.id > 2 && 
-               <WriteOption fields={fields} inputType={selection.inputType} append={append} remove={remove} replace={replace} />
-            }
-         </FormProvider>
-         <SubmitOrCancelButtons handleSubmit={methodsOne.handleSubmit} submit={onSubmit} cancel={cancel} preview={preview} />
-      </VStack>
+      <View>
+         <KeyboardAvoidingView behavior='padding'>
+            <VStack space='md'>
+               <FormProvider {...methodsOne}>
+                  <WriteQuestion />
+               </FormProvider>
+               <FormProvider {...methodsTwo}>
+                  { selection.id > 2 && 
+                     <WriteOption fields={fields} inputType={selection.inputType} append={append} remove={remove} replace={replace} />
+                  }
+               </FormProvider>
+               <SubmitOrCancelButtons handleSubmit={methodsOne.handleSubmit} submit={onSubmit} cancel={cancel} preview={preview} />
+            </VStack>
+         </KeyboardAvoidingView>
+         <View className='mt-4'><Text>{JSON.stringify(form, null, 2)}</Text></View>
+      </View>
    )
 }
 
