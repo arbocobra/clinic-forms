@@ -1,15 +1,16 @@
-import { useAuth, useClerk } from '@clerk/expo'
+import { useAuth } from '@clerk/expo'
 import { Redirect, Stack } from 'expo-router'
-import { Pressable, useColorScheme, View } from 'react-native'
+import { View, Text } from 'react-native'
 
 const Layout = () => {
-   const colorScheme = useColorScheme();
-   const headerBg = colorScheme === 'light' ? 'rgb(250,250,250)' : 'rgb(38,38,38)'
-   const headerTitle = colorScheme === 'light' ? 'rgb(38,38,38)' : 'rgb(250,250,250)'
+   
+   const { isSignedIn, isLoaded } = useAuth()
 
-   const { isSignedIn, orgRole } = useAuth()
-   const { user } = useClerk()
-   const canWrite = orgRole === 'org:practitioner_admin'
+   if (!isLoaded) {
+      return (
+         <View><Text>Loading...</Text></View>
+      )
+   }
 
    if (!isSignedIn) {
       return <Redirect href='/(auth)/signin' />

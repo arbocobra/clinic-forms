@@ -1,6 +1,6 @@
-import { StyleSheet, Appearance } from 'react-native'
+import { StyleSheet, useColorScheme } from 'react-native'
 
-export const colourMode = Appearance.getColorScheme();
+export const colourMode = useColorScheme();
 const colourScheme = {
    dark: {
       primeFore: 'rgb(250, 250, 250)', // more white
@@ -34,13 +34,16 @@ const createColours = (themeColors) =>
       color: 'rgb(250, 250, 250)',
     }
 })
-
+export const headerStyles = {
+    bg: colourScheme[colourMode].secondBack,
+    tint: colourScheme[colourMode].secondFore
+}
 export const styles = {
   container: 'flex-1 pt-15 pb-5 pl-5 pr-5',
   text: 'text-lg',
   title: '',
   button: 'mt-3',
-  buttonText: 'font-medium text-md' ,
+  buttonText: 'font-medium text-md',
 }
 
 export const colours = createColours(colourScheme[colourMode])

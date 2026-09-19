@@ -1,32 +1,30 @@
-import { useAuth, useClerk } from '@clerk/expo';
-import { Tabs } from 'expo-router'
-import { StyleSheet } from 'react-native';
+import { useAuth } from '@clerk/expo';
+import { Stack } from 'expo-router';
+import { headerStyles } from '@/src/constants/styles'
 
 const Layout = () => {
-   const { user } = useClerk()
    const { orgRole } = useAuth()
 
-   const canRead = orgRole === 'org:practitioner_admin' || orgRole === 'org:practitioner_member'
-   const canWrite = orgRole === 'org:practitioner_admin'
-   const canSubmit = orgRole === 'org:client'
+   const isPracticeAdmin = orgRole === 'org:practitioner_admin'
+   const isPracticeMember = orgRole === 'org:practitioner_member'
+   const isClient = orgRole === 'org:client'
+
+   const { background, tint } = headerStyles
 
    return (
-      <Tabs screenOptions={{
-         tabBarPosition: 'top',
-         tabBarStyle: { height: 130, paddingTop: 70 },
-         tabBarActiveTintColor: '#009689',
-         tabBarInactiveTintColor: '#101828',
-         tabBarLabelPosition: 'beside-icon',
-         tabBarIcon: () => null, 
-      }}>
-         <Tabs.Screen name='index' options={{ title: 'Home', headerShown: false, tabBarItemStyle: styles.tab }} />
-         <Tabs.Screen name='page-two' options={{ title: 'Page Two', headerShown: false, tabBarItemStyle: styles.tab }} />
-      </Tabs>
+      <Stack screenOptions={{ headerShown: false }}>
+         <Stack.Protected guard={isPracticeAdmin}>
+            <Stack.Screen name='(practice-admin)' />
+         </Stack.Protected>
+         <Stack.Protected guard={isPracticeMember}>
+            <Stack.Screen name='(practice-member)' />
+         </Stack.Protected>
+         <Stack.Protected guard={isClient}>
+            <Stack.Screen name='(practice-client)' />
+         </Stack.Protected>
+         <Stack.Screen name='error' options={{headerShown: true, headerTitle:'Error', headerTintColor:tint, headerStyle: {backgroundColor: background}}} />
+      </Stack>
    )
 }
 
 export default Layout;
-
-const styles = StyleSheet.create({
-   tab: {}
-})
