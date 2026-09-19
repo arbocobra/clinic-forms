@@ -13,9 +13,9 @@ if (!publishableKey) {
 export const RootLayout = () => {
   return (
     <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
-    <GluestackUIProvider mode='light'>
-      <Slot />
-    </GluestackUIProvider>
+      <GluestackUIProvider mode='dark'>
+        <Slot />
+      </GluestackUIProvider>
     </ClerkProvider>
   )
 }

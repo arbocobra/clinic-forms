@@ -19,3 +19,11 @@ export type QuestionFormInput = Pick<Question, 'label' | 'description' | 'requir
    showDesc: boolean;
 };
 export type OptionFormInput = Pick<Option, 'label'>
+export type Form = {
+   id:string,
+   title:string,
+   description?:string,
+   questions: Question[],
+   date:Date,
+   authorId:string
+}
