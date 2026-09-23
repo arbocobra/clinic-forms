@@ -1,7 +1,9 @@
 import { ScrollView, Text, useColorScheme } from 'react-native'
-import { VStack } from '@/gluestack/vstack'
-import { Center } from '@/gluestack/center'
-import { Heading } from '@/gluestack/heading'
+import { VStack } from '@/components/ui/vstack'
+import { Center } from '@/components/ui/center'
+import { Heading } from '@/components/ui/heading'
+import { Button, ButtonText } from '@/components/ui/button'
+
 import { colours, styles } from '@/src/constants/styles'
 
 export const PageTwo = ({userType}:{userType:string}) => {

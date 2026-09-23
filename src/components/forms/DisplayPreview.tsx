@@ -1,5 +1,7 @@
-import { DisplayShortText, DisplayLongText, DisplayTrueFalse, DisplaySingleSelectText } from '@/components/InputDisplays';
-import { Card, Heading, VStack } from '@/gluestack/index';
+import { DisplayShortText, DisplayLongText, DisplayTrueFalse, DisplaySingleSelectText } from '@/src/components/InputDisplays';
+import { Card } from '@/components/ui/card';
+import { Heading } from '@/components/ui/heading';
+import { VStack } from '@/components/ui/vstack';
 import type { QuestionBase, QuestionDisplay } from '@/src/types';
 import { Text } from 'react-native';
 import { useState } from 'react';

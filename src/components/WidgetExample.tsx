@@ -1,7 +1,7 @@
-import { Button, ButtonText } from '@/gluestack/button';
-import { FormControl, FormControlLabel, FormControlLabelText } from '@/gluestack/form-control';
-import { HStack } from '@/gluestack/hstack';
-import { Select, SelectBackdrop, SelectContent, SelectDragIndicator, SelectDragIndicatorWrapper, SelectIcon, SelectInput, SelectItem, SelectPortal, SelectTrigger } from '@/gluestack/select';
+import { Button, ButtonText } from '@/components/ui/button';
+import { FormControl, FormControlLabel, FormControlLabelText } from '@/components/ui/form-control';
+import { HStack } from '@/components/ui/hstack';
+import { Select, SelectBackdrop, SelectContent, SelectDragIndicator, SelectDragIndicatorWrapper, SelectIcon, SelectInput, SelectItem, SelectPortal, SelectTrigger } from '@/components/ui/select';
 import { ChevronDownIcon } from 'lucide-react-native';
 import { useController, useForm } from 'react-hook-form';
 import { StyleSheet } from 'react-native';

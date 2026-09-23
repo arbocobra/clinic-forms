@@ -11,6 +11,13 @@ const Layout = () => {
 
    const { background, tint } = headerStyles
 
+   const headerOptions = { 
+      headerShown: true, 
+      headerTitle: 'Error', 
+      // headerTintColor: tint, 
+      // headerStyle: { backgroundColor: background } 
+   }
+
    return (
       <Stack screenOptions={{ headerShown: false }}>
          <Stack.Protected guard={isPracticeAdmin}>
@@ -22,7 +29,7 @@ const Layout = () => {
          <Stack.Protected guard={isClient}>
             <Stack.Screen name='(practice-client)' />
          </Stack.Protected>
-         <Stack.Screen name='error' options={{headerShown: true, headerTitle:'Error', headerTintColor:tint, headerStyle: {backgroundColor: background}}} />
+         <Stack.Screen name='error' options={headerOptions} />
       </Stack>
    )
 }

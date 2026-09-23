@@ -1,4 +1,4 @@
-import { Heading } from '@/gluestack/index';
+import { Heading } from '@/components/ui/heading';
 import QuestionSelect from '@/src/components/forms/QuestionSelect';
 import WriteQuestion from '@/src/components/forms/WriteQuestion';
 import CreateQuestions from '@/src/components/forms/CreateQuestion';

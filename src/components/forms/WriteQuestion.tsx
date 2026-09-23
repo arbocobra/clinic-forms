@@ -1,4 +1,5 @@
-import { HStack, VStack } from '@/gluestack/index';
+import { HStack } from '@/components/ui/hstack'
+import { VStack } from '@/components/ui/vstack'
 import { AddDescriptionCheckbox, DescriptionTextInput, IsRequiredCheckbox, QuestionTextInput, SubmitOrCancelButtons } from '@/src/components/forms/WriteElements';
 import WriteOption from '@/src/components/forms/WriteOption';
 import type { QuestionFormInput, OptionFormInput } from '@/src/types';

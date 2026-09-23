@@ -1,73 +1,136 @@
-import { useAuth, useClerk, useUser } from '@clerk/expo'
-import { ScrollView, StyleSheet, Text, useColorScheme, View } from 'react-native'
-import { VStack } from '@/gluestack/vstack'
-import { Center } from '@/gluestack/center'
+import { Radio, RadioGroup, RadioIcon, RadioIndicator, RadioLabel } from '@/components/ui/radio';
+import { CircleIcon } from '@/components/ui/icon';
+import { Input, InputField, InputIcon, InputSlot } from '@/components/ui/input';
+import { SearchIcon } from '@/components/ui/icon';
+import { Icon } from '@/components/ui/icon';
+import { Checkbox, CheckboxIcon, CheckboxIndicator, CheckboxLabel } from '@/components/ui/checkbox';
+import { VStack } from '@/components/ui/vstack';
+import { Button, ButtonText, ButtonIcon } from '@/components/ui/button';
+import { Heading } from '@/components/ui/heading';
+import { ScrollView, Appearance, Text, useColorScheme } from 'react-native';
+import { Card } from '@/components/ui/card';
+import { Check, CirclePlus, SquarePen } from 'lucide-react-native';
+import { HStack } from '@/components/ui/hstack';
+import { Center } from '@/components/ui/center';
+import { Spinner } from '@/components/ui/spinner';
 
 export const Page = () => {
-  const colourMode = useColorScheme();
-  const colourScheme = {
-    dark: {
-      primeFore: 'rgb(250, 250, 250)', // more white
-      primeBack: 'rgb(38, 38, 38)', // less black
-      secondFore: 'rgb(245, 245, 245)', // less white
-      secondBack: 'rgb(23, 23, 23)' // more black
-    },
-    light: {
-      primeFore: 'rgb(23, 23, 23)', // more black
-      primeBack: 'rgb(245, 245, 245)', // less white
-      secondFore: 'rgb(38, 38, 38)', // less black
-      secondBack: 'rgb(250, 250, 250)' // more white
-    }
+  const current = useColorScheme()
+
+  const toggleTheme = () => {
+    Appearance.setColorScheme(
+      Appearance.getColorScheme() === 'dark' ? 'light' : 'dark'
+    )
   }
-  const styles = createStyles(colourScheme[colourMode])
+
+  if (!current) {
+    return <Text>Loading...</Text>
+  }
 
   return (
-    <ScrollView style={styles.container} keyboardShouldPersistTaps='handled'>
-      <Center className='flex-1 basis-full'>
-        <VStack space='md'>
-          <Text style={styles.title}>Forms - Page One!</Text>
-          <View className='bg-amber-400 h-45 w-45 justify-center items-end'>
-            <View className='bg-red-500 h-15 w-15'></View>
-          </View>
-        </VStack>
-      </Center>
-    </ScrollView>
+  <ScrollView keyboardShouldPersistTaps='handled'>
+    <VStack space='md' className='p-5 items-center bg-secondary'>
+      <Card>
+        <Heading size={"md"}>Theme: {current}</Heading>
+        <Text>Non GS text in here</Text>
+      </Card>
+      <Button size='lg' onPress={toggleTheme} isDisabled={false}>
+        <ButtonText>Toggle Colour</ButtonText>
+      </Button>
+      <Button variant='secondary' size='default' isDisabled={false}>
+        <ButtonIcon as={CirclePlus} />
+        <ButtonText>Secondary Button</ButtonText>
+      </Button>
+      <Checkbox isDisabled={false} isInvalid={false} value="checkbox-id">
+        <CheckboxIndicator>
+          <CheckboxIcon as={Check} />
+        </CheckboxIndicator>
+        <CheckboxLabel>Checkbox Label</CheckboxLabel>
+      </Checkbox>
+      <Icon as={SquarePen} size={"lg"} />
+      <Input isInvalid={false} isDisabled={false}>
+        <InputField value='' placeholder="Enter Text here" />
+        <InputSlot className='pr-4'>
+          <InputIcon as={SearchIcon} />
+        </InputSlot>
+      </Input>
+      <RadioGroup value='two'>
+        <HStack space='md'>
+          <Radio isInvalid={false} isDisabled={true} value='one' aria-label="Radio">
+            <RadioIndicator>
+              <RadioIcon as={CircleIcon} />
+            </RadioIndicator>
+            <RadioLabel>Disabled Radio</RadioLabel>
+          </Radio>
+          <Radio isInvalid={false} isDisabled={false} value='two' aria-label="Radio">
+            <RadioIndicator>
+              <RadioIcon as={CircleIcon} />
+            </RadioIndicator>
+            <RadioLabel>Regular Radio</RadioLabel>
+          </Radio>
+        </HStack>
+      </RadioGroup>
+      <RadioGroup value='one' isReadOnly={true}>
+        <HStack space='md'>
+          <Radio isInvalid={false} isDisabled={false} value='one' aria-label="Radio">
+            <RadioIndicator>
+              <RadioIcon as={CircleIcon} />
+            </RadioIndicator>
+            <RadioLabel>Read Only Group</RadioLabel>
+          </Radio>
+          <Radio isInvalid={false} isDisabled={false} value='two' aria-label="Radio">
+            <RadioIndicator>
+              <RadioIcon as={CircleIcon} />
+            </RadioIndicator>
+            <RadioLabel>Label</RadioLabel>
+          </Radio>
+        </HStack>
+      </RadioGroup>
+      <HStack space='md' className='flex-wrap'>
+        <Box val={'primary'} text={'primary-foreground'} />
+        <Box val={'secondary'} text={'secondary-foreground'} />
+        <Box val={'background'} text={'foreground'} />
+        <Box val={'popover'} text={'popover-foreground'} />
+        <Box val={'muted'} text={'muted-foreground'} />
+        <Box val={'accent'} text={'accent-foreground'} />
+        <Box val={'card'} text={'primary'} />
+        <Box val={'destructive'} text={null} />
+        <Box val={'input'} text={null} />
+        <Box val={'border'} text={null} />
+        <Box val={'ring'} text={null} />
+        <Box val={'extra'} text={null} />
+
+        {/* <Box val={'primary'} text={'primary-foreground'} />
+        <Box val={'primary-foreground'} text={'primary'} />
+        <Box val={'card'} text={'primary'} />
+        <Box val={'secondary'} text={'secondary-foreground'} />
+        <Box val={'secondary-foreground'} text={'secondary'} />
+        <Box val={'destructive'} text={null} />
+        <Box val={'background'} text={'foreground'} />
+        <Box val={'foreground'} text={'background'} />
+        <Box val={'input'} text={null} />
+        <Box val={'popover'} text={'popover-foreground'} />
+        <Box val={'popover-foreground'} text={'popover'} />
+        <Box val={'border'} text={null} />
+        <Box val={'muted'} text={'muted-foreground'} />
+        <Box val={'muted-foreground'} text={'muted'} />
+        <Box val={'ring'} text={null} />
+        <Box val={'accent'} text={'accent-foreground'} />
+        <Box val={'accent-foreground'} text={'accent'} /> */}
+      </HStack>
+
+    </VStack>
+  </ScrollView>
+  )
+};
+export default Page;
+
+const Box = ({val, text}) => {
+  const bStyle = `h-20 w-30 justify-center items-center bg-${val}`
+  const textStyle = text ? `text-${text} text-center` : 'text-primary text-center'
+  return (
+    <VStack className={bStyle}>
+      <Text className={textStyle}>{text ? val : `${val} *`}</Text>
+    </VStack>
   )
 }
-
-const createStyles = (themeColors:{primeFore:string, primeBack:string, secondFore:string, secondBack:string}) =>
-  StyleSheet.create({
-    container: {
-      flex: 1,
-      padding: 20,
-      paddingTop: 60,
-      gap: 16,
-      backgroundColor: '#f3f4f6' //themeColors.primeBack
-    },
-    text: {
-      color: themeColors.primeFore,
-      fontSize: 16
-    },
-    title: {
-      fontSize: 24,
-      fontWeight: 'bold',
-      color: themeColors.primeFore
-    },
-    button: {
-      backgroundColor: themeColors.secondBack,
-      paddingVertical: 12,
-      paddingHorizontal: 24,
-      borderRadius: 8,
-      alignItems: 'center',
-    },
-    buttonText: {
-      color: themeColors.secondFore,
-      fontWeight: '600',
-    },
-    linkText: {
-      color: 'blue',
-      fontSize: 16
-    }
-})
-
-export default Page;

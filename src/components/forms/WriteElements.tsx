@@ -1,6 +1,13 @@
-// import WriteOption from '@/components/forms/WriteOption';
-import { Button, ButtonText, Card, Checkbox, CheckboxIcon, CheckboxIndicator, CheckboxLabel, FormControl, FormControlError, FormControlErrorIcon, FormControlErrorText, FormControlLabel, FormControlLabelText, HStack, Icon, Input, InputField, Textarea, TextareaInput } from '@/gluestack/index';
+// import WriteOption from '@/src/components/forms/WriteOption';
+import { Checkbox, CheckboxIcon, CheckboxIndicator, CheckboxLabel  } from '@/components/ui/checkbox'
 import { Check, CircleAlert, CirclePlus } from 'lucide-react-native';
+import { FormControl, FormControlHelper, FormControlHelperText, FormControlLabel, FormControlLabelText, FormControlError, FormControlErrorIcon, FormControlErrorText } from '@/components/ui/form-control';
+import { HStack } from '@/components/ui/hstack'
+import { Button, ButtonText } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import { Icon } from '@/components/ui/icon'
+import { Textarea, TextareaInput } from '@/components/ui/textarea'
+import { Input, InputField } from '@/components/ui/input'
 
 import { Controller, type UseFormHandleSubmit, type SubmitHandler } from 'react-hook-form';
 import { Pressable, Text } from 'react-native';

@@ -3,15 +3,15 @@ import type { QuestionFormInput, OptionFormInput, QuestionBase, Option } from '@
 import { useEffect, useState, Dispatch, SetStateAction } from 'react';
 import { Controller, useFieldArray, useForm, useFormContext, FormProvider } from 'react-hook-form';
 import type { DefaultValues, SubmitHandler, FieldArrayWithId, UseFieldArrayAppend, FieldValues, Field } from 'react-hook-form';
-import { Button, ButtonText, ButtonIcon } from '@/gluestack/button'
-import { HStack } from '@/gluestack/hstack';
-import { VStack } from '@/gluestack/vstack'; 
-import {FormControl, FormControlError, FormControlErrorIcon, FormControlErrorText, FormControlLabel, FormControlLabelText} from '@/gluestack/form-control'
-import { Input, InputField } from '@/gluestack/input'
-import { Checkbox, CheckboxIcon, CheckboxIndicator, CheckboxLabel } from '@/gluestack/checkbox'
-import { Textarea, TextareaInput } from '@/gluestack/textarea'
-import { Icon } from '@/gluestack/icon';
-import { Card } from '@/gluestack/card';
+import { Button, ButtonText, ButtonIcon } from '@/components/ui/button'
+import { HStack } from '@/components/ui/hstack';
+import { VStack } from '@/components/ui/vstack'; 
+import {FormControl, FormControlError, FormControlErrorIcon, FormControlErrorText, FormControlLabel, FormControlLabelText} from '@/components/ui/form-control'
+import { Input, InputField } from '@/components/ui/input'
+import { Checkbox, CheckboxIcon, CheckboxIndicator, CheckboxLabel } from '@/components/ui/checkbox'
+import { Textarea, TextareaInput } from '@/components/ui/textarea'
+import { Icon } from '@/components/ui/icon';
+import { Card } from '@/components/ui/card';
 import { Check, CircleAlert, CirclePlus, SquarePen, Trash } from 'lucide-react-native';
 import { Pressable, Text, View, KeyboardAvoidingView } from 'react-native';
 

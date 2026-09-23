@@ -1,11 +1,11 @@
 import { ScrollView } from 'react-native'
-import { VStack } from '@/gluestack/vstack'
+import { VStack } from '@/components/ui/vstack'
 import { Stack } from 'expo-router';
 import { useForm, useFieldArray, Controller } from 'react-hook-form';
 import type { DefaultValues } from 'react-hook-form';
 import type { Form } from '@/src/types';
-import {FormControl, FormControlError, FormControlErrorIcon, FormControlErrorText, FormControlLabel, FormControlLabelText} from '@/gluestack/form-control'
-import { Input, InputField } from '@/gluestack/input'
+import {FormControl, FormControlError, FormControlErrorIcon, FormControlErrorText, FormControlLabel, FormControlLabelText} from '@/components/ui/form-control'
+import { Input, InputField } from '@/components/ui/input'
 import { CircleAlert } from 'lucide-react-native';
 
 

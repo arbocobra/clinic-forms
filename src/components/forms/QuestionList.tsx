@@ -1,4 +1,7 @@
-import { Heading, Icon, Table, TableBody, TableData, TableHead, TableHeader, TableRow, VStack } from '@/gluestack/index';
+import { Table, TableBody, TableData, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { VStack } from '@/components/ui/vstack';
+import { Heading } from '@/components/ui/heading';
+import { Icon } from '@/components/ui/icon';
 import type { Question } from '@/src/types';
 import { SquarePen, Trash } from 'lucide-react-native';
 import { Text } from 'react-native';

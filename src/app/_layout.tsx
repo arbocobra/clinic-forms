@@ -1,4 +1,4 @@
-import { GluestackUIProvider } from '@/gluestack/gluestack-ui-provider';
+import { GluestackUIProvider } from '@/components/ui/gluestack-ui-provider';
 import '@/src/global.css';
 import { ClerkProvider } from '@clerk/expo';
 import { tokenCache } from '@clerk/expo/token-cache';
@@ -13,7 +13,7 @@ if (!publishableKey) {
 export const RootLayout = () => {
   return (
     <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
-      <GluestackUIProvider mode='dark'>
+      <GluestackUIProvider mode='light'>
         <Slot />
       </GluestackUIProvider>
     </ClerkProvider>

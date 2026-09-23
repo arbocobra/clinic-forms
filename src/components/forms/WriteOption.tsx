@@ -1,8 +1,12 @@
-import { AddOptionRow, Error, SubmitOrCancelButtons } from '@/components/forms/WriteElements';
-import { Card, FormControl, FormControlLabel, FormControlLabelText, Input, InputField, VStack } from '@/gluestack/index';
+import { AddOptionRow, Error, SubmitOrCancelButtons } from '@/src/components/forms/WriteElements';
 import type { Option, OptionFormInput } from '@/src/types';
 import { useEffect, useState } from 'react';
 import { Controller, useForm, type DefaultValues } from 'react-hook-form';
+import { FormControl, FormControlHelper, FormControlHelperText, FormControlLabel, FormControlLabelText, FormControlError, FormControlErrorIcon, FormControlErrorText } from '@/components/ui/form-control';
+import { Card } from '@/components/ui/card'
+import { Input, InputField } from '@/components/ui/input'
+import { VStack } from '@/components/ui/vstack'
+
 
 const WriteOption = ({current, selection, append}) => {
 

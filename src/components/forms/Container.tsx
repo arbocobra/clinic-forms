@@ -1,4 +1,5 @@
-import { Divider, VStack } from '@/gluestack/index';
+import { VStack } from '@/components/ui/vstack';
+import { Divider } from '@/components/ui/divider';
 import AddQuestion from '@/src/components/forms/AddQuestion';
 import DisplayPreview from '@/src/components/forms/DisplayPreview';
 import QuestionList from '@/src/components/forms/QuestionList';

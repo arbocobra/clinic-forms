@@ -1,13 +1,13 @@
 import { useClerk } from '@clerk/expo'
 import { Appearance, ScrollView, Text, useColorScheme } from 'react-native'
 // import { useColorSch}
-import { VStack } from '@/gluestack/vstack'
-import { Center } from '@/gluestack/center'
-import { Heading } from '@/gluestack/heading'
-import { Switch } from '@/gluestack/switch'
-import { HStack } from '@/gluestack/hstack'
+import { VStack } from '@/components/ui/vstack'
+import { Center } from '@/components/ui/center'
+import { Heading } from '@/components/ui/heading'
+import { Switch } from '@/components/ui/switch'
+import { HStack } from '@/components/ui/hstack'
 import { colours, styles } from '@/src/constants/styles'
-import { Button, ButtonText } from '@/gluestack/button'
+import { Button, ButtonText } from '@/components/ui/button'
 import { useState } from 'react'
 
 export const Page = () => {

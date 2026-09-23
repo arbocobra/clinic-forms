@@ -12,7 +12,6 @@ module.exports = function (api) {
                alias: {
                   '@/': '.',
                   '@/app': './src/app',
-                  '@/components': './src/components',
                   '@/gluestack': './components/ui',
                   'tailwind.config': './tailwind.config.js',
                },

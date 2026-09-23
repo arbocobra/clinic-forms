@@ -1,11 +1,11 @@
 import { ScrollView, Text } from 'react-native'
 import { Link } from 'expo-router'
-import { VStack } from '@/gluestack/vstack'
-import { Heading } from '@/gluestack/heading'
-import { Icon } from '@/gluestack/icon'
-import { Button, ButtonIcon, ButtonText } from '@/gluestack/button'
+import { VStack } from '@/components/ui/vstack'
+import { Heading } from '@/components/ui/heading'
+import { Icon } from '@/components/ui/icon'
+import { Button, ButtonIcon, ButtonText } from '@/components/ui/button'
 import { SquarePen, Trash, SquareText } from 'lucide-react-native';
-import { Table, TableBody, TableData, TableHead, TableHeader, TableRow } from '@/gluestack/table'
+import { Table, TableBody, TableData, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 
 export const Page = () => {
 

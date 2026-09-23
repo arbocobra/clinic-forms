@@ -1,5 +1,7 @@
-import { Button, ButtonText, HStack, Select, SelectBackdrop, SelectContent, SelectDragIndicator, SelectDragIndicatorWrapper, SelectIcon, SelectInput, SelectItem, SelectPortal, SelectTrigger, VStack } from '@/gluestack/index';
-import {FormControl, FormControlError, FormControlErrorIcon, FormControlErrorText, FormControlLabel, FormControlLabelText} from '@/gluestack/form-control'
+import { Button, ButtonText,  } from '@/components/ui/button';
+import { HStack } from '@/components/ui/hstack';
+import { Select, SelectBackdrop, SelectContent, SelectDragIndicator, SelectDragIndicatorWrapper, SelectIcon, SelectInput, SelectItem, SelectPortal, SelectTrigger } from '@/components/ui/select';
+import {FormControl, FormControlError, FormControlErrorIcon, FormControlErrorText, FormControlLabel, FormControlLabelText} from '@/components/ui/form-control'
 import { questionBase } from '@/src/constants/questions';
 import type { QuestionBase } from '@/src/types';
 import { ChevronDownIcon, CircleAlert } from 'lucide-react-native';
