@@ -8,6 +8,8 @@
    2. @media dark :root  — dark defaults; nativewind maps this to
                            Appearance.getColorScheme() on native.
    3. :root.dark / :root.light — higher specificity for web class toggle. */
+
+
 @layer theme {
   :root {
     --primary: 23 23 23;
@@ -29,7 +31,27 @@
     --accent-foreground: 52 52 52;
   }
 
-  @media (prefers-color-scheme: dark) {
+  .dark {
+    --primary: 255 245 245;
+    --primary-foreground: 23 23 23;
+    --card: 23 23 23;
+    --secondary: 38 38 38;
+    --secondary-foreground: 250 250 250;
+    --background: 10 10 10;
+    --popover: 23 23 23;
+    --popover-foreground: 250 250 250;
+    --muted: 38 38 38;
+    --muted-foreground: 161 161 161;
+    --destructive: 255 100 103;
+    --foreground: 250 250 250;
+    --border: 46 46 46;
+    --input: 46 46 46;
+    --ring: 115 115 115;
+    --accent: 38 38 38;
+    --accent-foreground: 250 250 250;
+  }
+
+  /* @media (prefers-color-scheme: dark) {
     :root {
       --primary: 255 245 245;
       --primary-foreground: 23 23 23;
@@ -45,12 +67,11 @@
       --foreground: 250 250 250;
       --border: 46 46 46;
       --input: 46 46 46;
+      --ring: 115 115 115;
       --accent: 38 38 38;
       --accent-foreground: 250 250 250;
-      --ring: 115 115 115;
     }
   }
-
   :root.dark {
     --primary: 255 245 245;
     --primary-foreground: 23 23 23;
@@ -66,11 +87,10 @@
     --foreground: 250 250 250;
     --border: 46 46 46;
     --input: 46 46 46;
+    --ring: 115 115 115;
     --accent: 38 38 38;
     --accent-foreground: 250 250 250;
-    --ring: 115 115 115;
   }
-
   :root.light {
     --primary: 23 23 23;
     --primary-foreground: 250 250 250;
@@ -86,10 +106,10 @@
     --foreground: 10 10 10;
     --border: 229 229 229;
     --input: 229 229 229;
-    --ring: 212 212 212;
     --accent: 247 247 247;
     --accent-foreground: 52 52 52;
-  }
+    --ring: 212 212 212;
+  } */
 }
 
 @theme inline {
@@ -107,7 +127,64 @@
   --color-foreground: rgb(var(--foreground));
   --color-border: rgb(var(--border));
   --color-input: rgb(var(--input));
-  --color-ring: rgb(var(--ring));
   --color-accent: rgb(var(--accent));
   --color-accent-foreground: rgb(var(--accent-foreground));
+  --color-ring: rgb(var(--ring));
 }
+
+
+/*@theme {
+  --color-primary:  #ffa3ba;
+  --color-primary-foreground: #002273;
+  --color-secondary: #feffe0;
+  --color-secondary-foreground: #005418;
+
+   --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  
+  --color-app-primary: var(--app-primary);
+  --color-app-primary-fore: var(--app-primary-fore);
+  --color-app-secondary: var(--app-secondary);
+  --color-app-secondary-fore: var(--app-secondary-fore); 
+}*/
+/*:root {
+  --color-primary:  #ffa3ba;
+  --color-primary-foreground: #002273;
+  --color-secondary: #feffe0;
+  --color-secondary-foreground: #005418;
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground); 
+
+  --color-app-primary: var(--app-primary);
+  --color-app-primary-fore: var(--app-primary-fore);
+  --color-app-secondary: var(--app-secondary);
+  --color-app-secondary-fore: var(--app-secondary-fore);
+  
+}*/
+/* .light {
+  --primary: #ffa3ba;
+  --primary-foreground: #002273;
+  --secondary: #feffe0;
+  --secondary-foreground: #005418;
+
+  --app-primary: #ffa3ba;
+  --app-primary-fore: #002273;
+  --app-secondary: #feffe0;
+  --app-secondary-fore: #005418;
+}*/
+/* .dark {
+  --primary: #ff0543;
+  --primary-foreground: #87abff;
+  --secondary: #e0ac00;
+  --secondary-foreground: #d64fff;
+
+  --app-primary: #ff0543;
+  --app-primary-fore: #87abff;
+  --app-secondary: #e0ac00;
+  --app-secondary-fore: #d64fff;
+}  */

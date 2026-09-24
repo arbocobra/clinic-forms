@@ -4,12 +4,12 @@ import { BookOpenCheck, House, User } from 'lucide-react-native';
 
 const BottomTabsLayout = () => {
    const screenOptions = {
-      tabBarInactiveBackgroundColor: '#e5e7eb',
-      tabBarActiveTintColor: '#009689',
-      tabBarInactiveTintColor: '#99a1af',
-      tabBarStyle: {
-         backgroundColor: '#fff'
-      }
+      // tabBarInactiveBackgroundColor: '#e5e7eb',
+      // tabBarActiveTintColor: '#009689',
+      // tabBarInactiveTintColor: '#99a1af',
+      // tabBarStyle: {
+      //    backgroundColor: 'red'
+      // }
    }
    
    return (

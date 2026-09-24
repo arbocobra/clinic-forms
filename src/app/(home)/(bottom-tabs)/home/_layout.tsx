@@ -1,6 +1,5 @@
 import { useAuth } from '@clerk/expo';
 import { Stack } from 'expo-router';
-import { headerStyles } from '@/src/constants/styles'
 
 const Layout = () => {
    const { orgRole } = useAuth()
@@ -8,8 +7,6 @@ const Layout = () => {
    const isPracticeAdmin = orgRole === 'org:practitioner_admin'
    const isPracticeMember = orgRole === 'org:practitioner_member'
    const isClient = orgRole === 'org:client'
-
-   const { background, tint } = headerStyles
 
    const headerOptions = { 
       headerShown: true, 

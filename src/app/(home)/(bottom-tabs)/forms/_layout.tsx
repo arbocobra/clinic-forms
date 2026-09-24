@@ -1,10 +1,7 @@
-import { useAuth, useClerk } from '@clerk/expo';
+import { useAuth } from '@clerk/expo';
 import { Tabs } from 'expo-router';
-import { StyleSheet } from 'react-native';
 
 const Layout = () => {
-
-   const { user } = useClerk()
    const { orgRole } = useAuth()
 
    const canRead = orgRole === 'org:practitioner_admin' || orgRole === 'org:practitioner_member'
@@ -20,15 +17,15 @@ const Layout = () => {
          tabBarLabelPosition: 'beside-icon',
          tabBarIcon: () => null, 
       }}>
-         <Tabs.Screen name='index' options={{ title: 'Forms Home', headerShown: false, tabBarItemStyle: styles.tab }} />
+         <Tabs.Screen name='index' options={{ title: 'Forms Home', headerShown: false, tabBarItemStyle: {} }} />
          <Tabs.Protected guard={canWrite}>
-            <Tabs.Screen name='write' options={{ title: 'Write Forms', headerShown: false, tabBarItemStyle: styles.tab }} />
+            <Tabs.Screen name='write' options={{ title: 'Write Forms', headerShown: false, tabBarItemStyle: {} }} />
          </Tabs.Protected>
          <Tabs.Protected guard={canRead}>
-            <Tabs.Screen name='read' options={{ title: 'Read Forms', headerShown: false, tabBarItemStyle: styles.tab }} />
+            <Tabs.Screen name='read' options={{ title: 'Read Forms', headerShown: false, tabBarItemStyle: {} }} />
          </Tabs.Protected>
          <Tabs.Protected guard={canSubmit}>
-            <Tabs.Screen name='submit' options={{ title: 'Submit Forms', headerShown: false, tabBarItemStyle: styles.tab }} />
+            <Tabs.Screen name='submit' options={{ title: 'Submit Forms', headerShown: false, tabBarItemStyle: {} }} />
          </Tabs.Protected>
          {/* <Tabs.Protected guard={canWrite}>
             <Tabs.Screen name='create' options={{ href: null, title: 'New Form' }} />
@@ -36,12 +33,5 @@ const Layout = () => {
       </Tabs>
    )
 }
-
-// 36.6
-//
-
-const styles = StyleSheet.create({
-   tab: {}
-})
 
 export default Layout;

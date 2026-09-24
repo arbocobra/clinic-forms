@@ -6,8 +6,8 @@ const Layout = () => {
       <Tabs screenOptions={{
          tabBarPosition: 'top',
          tabBarStyle: { height: 130, paddingTop: 70 },
-         tabBarActiveTintColor: '#009689',
-         tabBarInactiveTintColor: '#101828',
+         // tabBarActiveTintColor: '#009689',
+         // tabBarInactiveTintColor: '#101828',
          tabBarLabelPosition: 'beside-icon',
          tabBarIcon: () => null, 
       }}>
