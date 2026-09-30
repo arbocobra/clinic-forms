@@ -1,4 +1,4 @@
-export type ThemeName = 'default' | 'test';
+export type ThemeName = 'default' | 'test' | 'custom';
 export type ColorMode = 'light' | 'dark' | 'system';
 type CSSVar = `--${string}`;
 export type ThemeVars = Record<CSSVar, string>;
@@ -83,6 +83,47 @@ export const themeConfigs: Record<ThemeName, ThemeObject> = {
          '--border': '46 46 46',
          '--input': '46 46 46',
          '--accent': '38 38 38',
+         '--accent-foreground': '250 250 250',
+         '--ring': '115 115 115',
+      },
+   },
+   custom: {
+      name:'custom',
+      light: {
+         '--primary': '23 23 23',
+         '--primary-foreground': '250 250 250',
+         '--card': '255 255 255',
+         '--secondary': '245 245 245',
+         '--secondary-foreground': '23 23 23',
+         '--background': '250 250 250', //slightly darker
+         '--popover': '255 255 255',
+         '--popover-foreground': '10 10 10',
+         '--muted': '245 245 245',
+         '--muted-foreground': '115 115 115',
+         '--destructive': '255 100 103', //edited to test
+         '--foreground': '10 10 10',
+         '--border': '229 229 229',
+         '--input': '229 229 229',
+         '--ring': '212 212 212',
+         '--accent': '0 146 184',  //teal
+         '--accent-foreground': '52 52 52',
+      },
+      dark: {
+         '--primary': '255 245 245',
+         '--primary-foreground': '23 23 23',
+         '--card': '23 23 23',
+         '--secondary': '38 38 38',
+         '--secondary-foreground': '250 250 250',
+         '--background': '10 10 10',
+         '--popover': '23 23 23',
+         '--popover-foreground': '250 250 250',
+         '--muted': '38 38 38',
+         '--muted-foreground': '161 161 161',
+         '--destructive': '255 100 103',
+         '--foreground': '250 250 250',
+         '--border': '46 46 46',
+         '--input': '46 46 46',
+         '--accent': '255 186 0', //amber
          '--accent-foreground': '250 250 250',
          '--ring': '115 115 115',
       }

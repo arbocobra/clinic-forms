@@ -1,5 +1,7 @@
 import { useAuth } from '@clerk/expo';
 import { Stack } from 'expo-router';
+import { ScrollView } from 'react-native';
+import { VStack } from '@/components/ui/vstack'
 
 const Layout = () => {
    const { orgRole } = useAuth()

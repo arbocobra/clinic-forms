@@ -8,6 +8,9 @@ import * as SplashScreenExpo from 'expo-splash-screen';
 import { AppThemeProvider, useAppTheme } from '@/src/contexts/app-theme-context';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { View } from 'react-native';
+
 
 const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!
 
@@ -19,12 +22,14 @@ const AppContent = () => {
   const { colorMode } = useAppTheme();
   
   return (
-    <>
+    <View className='bg-background flex-1'>
       <StatusBar style={ colorMode == 'dark' ? 'light' : 'dark' } />
       <GluestackUIProvider mode={ colorMode }>
-        <Slot />
+        <SafeAreaView edges={['left', 'right', 'top']} style={{flex:1}}>
+          <Slot />
+        </SafeAreaView>
       </GluestackUIProvider>
-    </>
+    </View>
   )
 }
 

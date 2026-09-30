@@ -7,34 +7,26 @@ import { Checkbox, CheckboxIcon, CheckboxIndicator, CheckboxLabel } from '@/comp
 import { VStack } from '@/components/ui/vstack';
 import { Button, ButtonText, ButtonIcon } from '@/components/ui/button';
 import { Heading } from '@/components/ui/heading';
-import { ScrollView, Appearance, Text, useColorScheme } from 'react-native';
+import { Text as DefaultText } from 'react-native';
 import { Card } from '@/components/ui/card';
 import { Check, CirclePlus, SquarePen } from 'lucide-react-native';
 import { HStack } from '@/components/ui/hstack';
-import { Center } from '@/components/ui/center';
-import { Spinner } from '@/components/ui/spinner';
+import { useAppTheme } from '@/src/contexts/app-theme-context';
+import { Text } from '@/components/custom/text';
+import { Container } from '@/components/custom/wrapper';
 
 export const Page = () => {
-  const current = useColorScheme()
-
-  const toggleTheme = () => {
-    Appearance.setColorScheme(
-      Appearance.getColorScheme() === 'dark' ? 'light' : 'dark'
-    )
-  }
-
-  if (!current) {
-    return <Text>Loading...</Text>
-  }
+  const { resolvedColorMode, toggleColorMode, currentTheme } = useAppTheme()
 
   return (
-  <ScrollView keyboardShouldPersistTaps='handled'>
-    <VStack space='md' className='p-5 items-center bg-secondary'>
-      <Card>
-        <Heading size={"md"}>Theme: {current}</Heading>
-        <Text>Non GS text in here</Text>
+    <Container>
+      <Card className='w-full items-center self-center'>
+        <Heading size={"md"}>Colour Mode: {resolvedColorMode}</Heading>
+        <Heading size={"md"}>Theme: {currentTheme}</Heading>
+        <Text>Custom text in here</Text>
+        <DefaultText>Non GS text in here</DefaultText>
       </Card>
-      <Button size='lg' onPress={toggleTheme} isDisabled={false}>
+      <Button size='lg' onPress={toggleColorMode} isDisabled={false}>
         <ButtonText>Toggle Colour</ButtonText>
       </Button>
       <Button variant='secondary' size='default' isDisabled={false}>
@@ -93,12 +85,11 @@ export const Page = () => {
         <Box val={'popover'} text={'popover-foreground'} />
         <Box val={'muted'} text={'muted-foreground'} />
         <Box val={'accent'} text={'accent-foreground'} />
-        <Box val={'card'} text={'primary'} />
+        <Box val={'card'} text={null} />
         <Box val={'destructive'} text={null} />
         <Box val={'input'} text={null} />
         <Box val={'border'} text={null} />
         <Box val={'ring'} text={null} />
-        <Box val={'extra'} text={null} />
 
         {/* <Box val={'primary'} text={'primary-foreground'} />
         <Box val={'primary-foreground'} text={'primary'} />
@@ -117,20 +108,20 @@ export const Page = () => {
         <Box val={'ring'} text={null} />
         <Box val={'accent'} text={'accent-foreground'} />
         <Box val={'accent-foreground'} text={'accent'} /> */}
+
       </HStack>
 
-    </VStack>
-  </ScrollView>
+    </Container>
   )
 };
 export default Page;
 
-const Box = ({val, text}) => {
-  const bStyle = `h-20 w-30 justify-center items-center bg-${val}`
-  const textStyle = text ? `text-${text} text-center` : 'text-primary text-center'
+const Box = ({ val, text }) => {
+  const bStyle = `h-20 basis-30 grow-1 shrink-1 justify-center items-center bg-${val}`
+  const textStyle = text ? `text-${text} text-center text-base` : 'text-primary text-center text-base'
   return (
     <VStack className={bStyle}>
-      <Text className={textStyle}>{text ? val : `${val} *`}</Text>
+      <DefaultText className={textStyle}>{text ? val : `${val} *`}</DefaultText>
     </VStack>
   )
 }

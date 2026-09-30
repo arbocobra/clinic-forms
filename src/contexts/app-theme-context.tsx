@@ -21,7 +21,7 @@ const AppThemeContext = createContext<AppThemeContextType | undefined>(undefined
 export const AppThemeProvider:React.FC<{ children: ReactNode }> = ({ children }) => {
    const colorScheme = useColorScheme()
    const setColorScheme = (val:ColorSchemeName):void => { Appearance.setColorScheme(val)} 
-   const [currentTheme, setCurrentTheme] = useState<ThemeName>('default');
+   const [currentTheme, setCurrentTheme] = useState<ThemeName>('custom');
    const [colorMode, setColorMode] = useState<ColorMode>('system');
    const [isThemeLoaded, setIsThemeLoaded] = useState(false);
 

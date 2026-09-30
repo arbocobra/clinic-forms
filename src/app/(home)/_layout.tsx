@@ -5,7 +5,6 @@ import { View, Text } from 'react-native'
 const Layout = () => {
    
    const { isSignedIn, isLoaded } = useAuth()
-
    if (!isLoaded) {
       return (
          <View><Text>Loading...</Text></View>

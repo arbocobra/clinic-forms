@@ -1,14 +1,19 @@
-import { Stack } from 'expo-router'
-import TabWrapper from '@/src/app/(home)/(bottom-tabs)/_layout';
+import { Tabs, TabSlot, TabList, TabTrigger } from 'expo-router/ui';
+import { CustomTopTabList, CustomTopTabButton } from '@/components/custom/tabs';
 
 const Layout = () => {
    return (
-            <Stack screenOptions={{title: 'Profile'}} />
-
-   // <TabWrapper>
-   //    <Stack screenOptions={{title: 'Profile'}} />
-   //    </TabWrapper>
-      )
+      <Tabs>
+         <TabList asChild>
+            <CustomTopTabList>
+               <TabTrigger name='index' href='/profile' asChild>
+                  <CustomTopTabButton label='Profile' />
+               </TabTrigger>
+            </CustomTopTabList>
+         </TabList>
+         <TabSlot />
+      </Tabs>
+   )
 }
 
 export default Layout;

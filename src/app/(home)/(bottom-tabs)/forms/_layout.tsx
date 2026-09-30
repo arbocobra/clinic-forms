@@ -1,5 +1,6 @@
 import { useAuth } from '@clerk/expo';
-import { Tabs } from 'expo-router';
+import { Tabs, TabSlot, TabList, TabTrigger } from 'expo-router/ui';
+import { CustomTopTabList, CustomTopTabButton } from '@/components/custom/tabs';
 
 const Layout = () => {
    const { orgRole } = useAuth()
@@ -9,27 +10,31 @@ const Layout = () => {
    const canSubmit = orgRole === 'org:client'
 
    return (
-      <Tabs screenOptions={{
-         tabBarPosition: 'top',
-         tabBarStyle: { height: 130, paddingTop: 70 },
-         tabBarActiveTintColor: '#009689',
-         tabBarInactiveTintColor: '#101828',
-         tabBarLabelPosition: 'beside-icon',
-         tabBarIcon: () => null, 
-      }}>
-         <Tabs.Screen name='index' options={{ title: 'Forms Home', headerShown: false, tabBarItemStyle: {} }} />
-         <Tabs.Protected guard={canWrite}>
-            <Tabs.Screen name='write' options={{ title: 'Write Forms', headerShown: false, tabBarItemStyle: {} }} />
-         </Tabs.Protected>
-         <Tabs.Protected guard={canRead}>
-            <Tabs.Screen name='read' options={{ title: 'Read Forms', headerShown: false, tabBarItemStyle: {} }} />
-         </Tabs.Protected>
-         <Tabs.Protected guard={canSubmit}>
-            <Tabs.Screen name='submit' options={{ title: 'Submit Forms', headerShown: false, tabBarItemStyle: {} }} />
-         </Tabs.Protected>
-         {/* <Tabs.Protected guard={canWrite}>
-            <Tabs.Screen name='create' options={{ href: null, title: 'New Form' }} />
-         </Tabs.Protected> */}
+      <Tabs>
+         <TabList asChild>
+            <CustomTopTabList>
+               <TabTrigger name='index' href='/home' asChild>
+                  <CustomTopTabButton label='Home' />
+               </TabTrigger>
+               
+               { canWrite && 
+                  <TabTrigger name='write' href='/forms/write' asChild>
+                     <CustomTopTabButton label='Write Forms' />
+                  </TabTrigger>
+               }
+               { canRead && 
+                  <TabTrigger name='read' href='/forms/read' asChild>
+                     <CustomTopTabButton label='Page Two' />
+                  </TabTrigger>
+               }
+               { canSubmit && 
+                  <TabTrigger name='submit' href='/forms/submit' asChild>
+                     <CustomTopTabButton label='Page Two' />
+                  </TabTrigger>
+               }
+            </CustomTopTabList>
+         </TabList>
+         <TabSlot />
       </Tabs>
    )
 }
