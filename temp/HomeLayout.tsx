@@ -1,5 +1,5 @@
 // app/(home)/_layout.tsx
-import { useAuth, useUser } from '@clerk/clerk-expo';
+import { useAuth, useUser } from '@clerk/expo'
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, View } from 'react-native';
 import { Stack, useRouter } from 'expo-router';

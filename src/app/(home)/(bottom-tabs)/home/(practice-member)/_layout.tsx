@@ -1,20 +1,20 @@
-import { Tabs } from 'expo-router';
+import { Tabs, TabSlot, TabList, TabTrigger } from 'expo-router/ui';
+import { CustomTopTabList, CustomTopTabButton } from '@/components/custom/tabs';
 
-const Layout = () => {
-
-   return (
-      <Tabs screenOptions={{
-         tabBarPosition: 'top',
-         tabBarStyle: { height: 130, paddingTop: 70 },
-         // tabBarActiveTintColor: '#009689',
-         // tabBarInactiveTintColor: '#101828',
-         tabBarLabelPosition: 'beside-icon',
-         tabBarIcon: () => null, 
-      }}>
-         <Tabs.Screen name='index' options={{ title: 'Member Home', headerShown: false }} />
-         <Tabs.Screen name='page-two' options={{ title: 'Page Two', headerShown: false }} />
-      </Tabs>
-   )
-}
+const Layout = () => (
+   <Tabs>
+      <TabList asChild>
+         <CustomTopTabList>
+            <TabTrigger name='index' href='/home' asChild>
+               <CustomTopTabButton label='Home' />
+            </TabTrigger>
+            <TabTrigger name='page-two' href='/home/page-two' asChild>
+               <CustomTopTabButton label='Page Two' />
+            </TabTrigger>
+         </CustomTopTabList>
+      </TabList>
+      <TabSlot />
+   </Tabs>
+)
 
 export default Layout;

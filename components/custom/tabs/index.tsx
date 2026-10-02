@@ -4,7 +4,7 @@ import type { TabTriggerSlotProps  } from 'expo-router/ui';
 import type { LucideIcon } from 'lucide-react-native';
 import { Icon } from '@/components/ui/icon';
 
-export const CustomTopTabList = ({route, children}) => {
+export const CustomTopTabList = ({route = '', children}) => {
 
    // change to [route, names].includes(route) when list is >1
    const isHidden = route == 'create'

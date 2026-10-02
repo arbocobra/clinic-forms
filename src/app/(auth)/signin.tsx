@@ -29,14 +29,15 @@ export const Page = () => {
             console.log('Submit CURRENT TASK: ', session?.currentTask) // temp
             return
           }
-          const memberships = session.user?.organizationMemberships
+          // const memberships = session.user?.organizationMemberships
           // if (memberships && memberships.length > 1) {
           //   console.log('multi memberships')
           //   const url = decorateUrl('/organization-selection')
           //   router.push(url as Href)
           // }
           const url = decorateUrl('/')
-          router.push(url as Href)
+          // router.push(url as Href)
+          router.replace(url as Href)
         }
       })
     } else if (signIn.status === 'needs_client_trust') {
@@ -63,7 +64,8 @@ export const Page = () => {
             return
           }
           const url = decorateUrl('/')
-          router.push(url as Href)
+          // router.push(url as Href)
+          router.replace(url as Href)
         }
       })
     } else {

@@ -1,28 +1,21 @@
-// import { Tabs } from 'expo-router';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Pressable } from '@/components/ui/pressable'
-import { Tabs, TabSlot, TabList, TabTrigger, type TabTriggerSlotProps  } from 'expo-router/ui';
+import { Tabs, TabSlot, TabList, TabTrigger } from 'expo-router/ui';
 import { CustomTopTabList, CustomTopTabButton } from '@/components/custom/tabs';
-import { VStack } from '@/components/ui/vstack'
 
-const Layout = () => {
-
-   return (
-      <Tabs>
-         <TabList asChild>
-            <CustomTopTabList>
-               <TabTrigger name='index' href='/home' asChild>
-                  <CustomTopTabButton label='Home' />
-               </TabTrigger>
-               <TabTrigger name='page-two' href='/home/page-two' asChild>
-                  <CustomTopTabButton label='Page Two' />
-               </TabTrigger>
-            </CustomTopTabList>
-         </TabList>
-         <TabSlot />
-      </Tabs>
-   )
-}
+const Layout = () => (
+   <Tabs>
+      <TabList asChild>
+         <CustomTopTabList>
+            <TabTrigger name='index' href='/home' asChild>
+               <CustomTopTabButton label='Home' />
+            </TabTrigger>
+            <TabTrigger name='page-two' href='/home/page-two' asChild>
+               <CustomTopTabButton label='Page Two' />
+            </TabTrigger>
+         </CustomTopTabList>
+      </TabList>
+      <TabSlot />
+   </Tabs>
+)
 
 // const CustomTabSlotWrapper = () => (
 //    <TabSlot renderFn={(descriptor, {isFocused, loaded}) => {

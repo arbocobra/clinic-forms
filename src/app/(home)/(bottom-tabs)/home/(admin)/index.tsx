@@ -13,12 +13,13 @@ const Page = () => {
    return (
     <Container>
       <Heading size='xl'>Welcome {user?.fullName}!</Heading>
-      <Text>You are an member-level practitioner</Text>
-      <Text>You can read forms</Text>
+      <Text>You are an admin</Text>
+      <Text>You can do everything</Text>
 
       <Button size='lg' onPress={toggleColorMode}>
         <ButtonText>Toggle Colour Scheme</ButtonText>
       </Button>
     </Container>
 )}
+
 export default Page;

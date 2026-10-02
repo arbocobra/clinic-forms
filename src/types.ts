@@ -33,3 +33,14 @@ export type LogIn = {
    password:string
 }
 export type Verify = { code:string }
+
+export type UserOrgData = {
+   isActive: boolean,
+   currentOrg?:string,
+   currentRole?:string,
+   currentId?:string,
+   count:number,
+   memberships: {
+      [key:string]:string
+   }
+}
