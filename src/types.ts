@@ -25,5 +25,11 @@ export type Form = {
    description?:string,
    questions: Question[],
    date:Date,
-   authorId:string
+   authorIds:string[]
 }
+// type EmailString = `${string}@${string}.${string}`;
+export type LogIn = {
+   emailAddress:string,
+   password:string
+}
+export type Verify = { code:string }

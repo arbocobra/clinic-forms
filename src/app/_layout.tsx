@@ -22,7 +22,7 @@ const AppContent = () => {
   const { colorMode } = useAppTheme();
   
   return (
-    <View className='bg-background flex-1'>
+    <View className='bg-card flex-1'>
       <StatusBar style={ colorMode == 'dark' ? 'light' : 'dark' } />
       <GluestackUIProvider mode={ colorMode }>
         <SafeAreaView edges={['left', 'right', 'top']} style={{flex:1}}>

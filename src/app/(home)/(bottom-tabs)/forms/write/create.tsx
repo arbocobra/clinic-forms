@@ -1,28 +1,45 @@
-import { ScrollView } from 'react-native'
-import { VStack } from '@/components/ui/vstack'
-import { Stack } from 'expo-router';
+import { View } from 'react-native'
+import { HStack } from '@/components/ui/hstack'
+import { Heading } from '@/components/ui/heading'
+import { Stack, useRouter } from 'expo-router';
 import { useForm, useFieldArray, Controller } from 'react-hook-form';
 import type { DefaultValues } from 'react-hook-form';
 import type { Form } from '@/src/types';
 import {FormControl, FormControlError, FormControlErrorIcon, FormControlErrorText, FormControlLabel, FormControlLabelText} from '@/components/ui/form-control'
 import { Input, InputField } from '@/components/ui/input'
 import { CircleAlert } from 'lucide-react-native';
+import { IconButton } from '@/components/custom/buttons'
+import { Container } from '@/components/custom/wrapper'
+import { MoveLeft } from 'lucide-react-native';
 
 
-const formDefault:DefaultValues<Form> = { id:'', title: '', description:'', questions:[], date: new Date(), authorId:''}
+const formDefault:DefaultValues<Form> = { id:'', title: '', description:'', questions:[], date: new Date(), authorIds:[]}
 const Page = () => {
   const { handleSubmit, control } = useForm<Form>({defaultValues: formDefault})
   const {fields, append, remove, replace} = useFieldArray<Form, 'questions'>({control, name:'questions', rules: { minLength: 1 }})
-
+   const router = useRouter();
   return (
-    <ScrollView keyboardShouldPersistTaps='handled'>
-      <Stack.Screen options={{ title:'New Form', headerBackVisible: true, headerShown: true, headerBackTitle:'Back' }} />
-      <VStack space='lg' className='pt-10 pb-0 pl-5 pr-5'>
-        <NameForm control={control} />
-      </VStack>
-    </ScrollView>
+   <>
+      <Stack.Screen options={{ title:'New Form', headerBackVisible: true, headerShown: true, header: () => (
+         <Header backRoute={ () => router.replace('/forms/write') } />
+      )}} />
+      <Container>
+         <NameForm control={control} />
+      </Container>
+   </>
   )
 }
+
+const Header = ({backRoute}) => (
+   <HStack className='bg-card'>
+      <View className='basis-1/4 grow-0 shrink-0 justify-center items-center'>
+         <IconButton className='' onPress={backRoute} variant='link' size='lg' icon={MoveLeft} />
+      </View>
+      <View className='basis-1/2 grow-0 shrink-0 p-2 justify-center items-center'>
+         <Heading className='' size='sm'>New Form</Heading>
+      </View>
+   </HStack>
+)
 
 const NameForm = ({control}) => {
   return (

@@ -93,32 +93,32 @@ export const themeConfigs: Record<ThemeName, ThemeObject> = {
          '--primary': '23 23 23',
          '--primary-foreground': '250 250 250',
          '--card': '255 255 255',
-         '--secondary': '245 245 245',
+         '--secondary': '230 230 230', // slightly darker
          '--secondary-foreground': '23 23 23',
          '--background': '250 250 250', //slightly darker
          '--popover': '255 255 255',
          '--popover-foreground': '10 10 10',
          '--muted': '245 245 245',
-         '--muted-foreground': '115 115 115',
+         '--muted-foreground': '170 170 170', // lighter
          '--destructive': '255 100 103', //edited to test
          '--foreground': '10 10 10',
          '--border': '229 229 229',
          '--input': '229 229 229',
          '--ring': '212 212 212',
-         '--accent': '0 146 184',  //teal
+         '--accent': '0 182 199',  //teal
          '--accent-foreground': '52 52 52',
       },
       dark: {
          '--primary': '255 245 245',
          '--primary-foreground': '23 23 23',
-         '--card': '23 23 23',
-         '--secondary': '38 38 38',
+         '--card': '0 0 0', // black
+         '--secondary': '50 50 50', // slightly lighter
          '--secondary-foreground': '250 250 250',
          '--background': '10 10 10',
          '--popover': '23 23 23',
          '--popover-foreground': '250 250 250',
-         '--muted': '38 38 38',
-         '--muted-foreground': '161 161 161',
+         '--muted': '30 30 30', // darker
+         '--muted-foreground': '110 110 110', // darker
          '--destructive': '255 100 103',
          '--foreground': '250 250 250',
          '--border': '46 46 46',

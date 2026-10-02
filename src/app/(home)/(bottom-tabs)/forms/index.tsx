@@ -5,7 +5,6 @@ import { SearchIcon } from '@/components/ui/icon';
 import { Icon } from '@/components/ui/icon';
 import { Checkbox, CheckboxIcon, CheckboxIndicator, CheckboxLabel } from '@/components/ui/checkbox';
 import { VStack } from '@/components/ui/vstack';
-import { Button, ButtonText, ButtonIcon } from '@/components/ui/button';
 import { Heading } from '@/components/ui/heading';
 import { Text as DefaultText } from 'react-native';
 import { Card } from '@/components/ui/card';
@@ -14,25 +13,23 @@ import { HStack } from '@/components/ui/hstack';
 import { useAppTheme } from '@/src/contexts/app-theme-context';
 import { Text } from '@/components/custom/text';
 import { Container } from '@/components/custom/wrapper';
+import { Button, AccentButton, TextIconButton } from '@/components/custom/buttons';
 
 export const Page = () => {
   const { resolvedColorMode, toggleColorMode, currentTheme } = useAppTheme()
 
   return (
     <Container>
-      <Card className='w-full items-center self-center'>
+      <Card className='w-full items-center'>
         <Heading size={"md"}>Colour Mode: {resolvedColorMode}</Heading>
         <Heading size={"md"}>Theme: {currentTheme}</Heading>
         <Text>Custom text in here</Text>
         <DefaultText>Non GS text in here</DefaultText>
       </Card>
-      <Button size='lg' onPress={toggleColorMode} isDisabled={false}>
-        <ButtonText>Toggle Colour</ButtonText>
-      </Button>
-      <Button variant='secondary' size='default' isDisabled={false}>
-        <ButtonIcon as={CirclePlus} />
-        <ButtonText>Secondary Button</ButtonText>
-      </Button>
+      <Button className='self-center' onPress={toggleColorMode} label='Toggle Colour' />
+      <AccentButton onPress={() => { console.log('bip') }} label='Accent Button' />
+      <TextIconButton onPress={() => { console.log('bop') }} icon={CirclePlus} position='left' label='Icon Button' />
+      <Button onPress={() => { console.log('boop') }} variant='outline' size='default' label='Variant' />
       <Checkbox isDisabled={false} isInvalid={false} value="checkbox-id">
         <CheckboxIndicator>
           <CheckboxIcon as={Check} />

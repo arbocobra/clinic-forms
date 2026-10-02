@@ -1,10 +1,4 @@
-﻿
-
-
-> Written with [StackEdit](https://stackedit.io/).
-
-----------
-# Temp Update suggestions
+﻿# Temp Update suggestions
 
 ## How User Org Works
 
@@ -14,7 +8,7 @@
     -   If multiple orgs and none active: Redirects to  `select-organization`
     -   If multiple orgs and one is active: Goes to home
 3.  User selects organization  on  `select-organization`  screen
-4.  Redirects to home  with active organization set
+4.  Redirects to home with active organization set
 
 ## How Drawer Works
 
@@ -48,3 +42,5 @@ app/
 └── components/
     └── OrganizationDrawer.tsx
 ```
+
+> Written with [StackEdit](https://stackedit.io/).
