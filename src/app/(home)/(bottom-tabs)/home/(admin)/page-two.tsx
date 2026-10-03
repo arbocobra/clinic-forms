@@ -1,4 +1,4 @@
-import PageTwo from '@/src/components/home/PageTwo';
+import PageTwo from '@/features/home/PageTwo';
 
 const Page = () => {
   return <PageTwo userType='Admin' />

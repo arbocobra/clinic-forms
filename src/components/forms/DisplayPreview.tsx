@@ -1,4 +1,4 @@
-import { DisplayShortText, DisplayLongText, DisplayTrueFalse, DisplaySingleSelectText } from '@/src/components/InputDisplays';
+import { DisplayShortText, DisplayLongText, DisplayTrueFalse, DisplaySingleSelectText } from '@/features/InputDisplays';
 import { Card } from '@/components/ui/card';
 import { Heading } from '@/components/ui/heading';
 import { VStack } from '@/components/ui/vstack';

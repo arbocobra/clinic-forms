@@ -1,4 +1,4 @@
-import { HomeTabs } from '@/src/components/top-tabs/HomeTabs';
+import { HomeTabs } from '@/features/top-tabs/HomeTabs';
 
 const Layout = () => <HomeTabs />
 

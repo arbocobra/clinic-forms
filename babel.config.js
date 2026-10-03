@@ -13,6 +13,7 @@ module.exports = function (api) {
                   '@/': '.',
                   '@/app': './src/app',
                   '@/gluestack': './components/ui',
+                  '@/features': './src/components',
                   'tailwind.config': './tailwind.config.js',
                },
             },

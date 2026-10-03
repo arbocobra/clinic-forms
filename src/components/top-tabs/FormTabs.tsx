@@ -2,7 +2,7 @@ import { Tabs, TabSlot, TabList, TabTrigger } from 'expo-router/ui';
 import { CustomTopTabList, CustomTopTabButton } from '@/components/custom/tabs';
 import { useAdminSwitch } from '@/src/hooks/useAdminSwitch';
 import { useUserRoles } from '@/src/hooks/useUserRoles';
-import { SwitchSheet, SwitchButton } from '@/src/components/top-tabs/OrganizationSwitch';
+import { SwitchSheet, SwitchButton } from '@/features/top-tabs/OrganizationSwitch';
 
 export const FormTabs = () => {
    const { canSwitchOrganizations, isOpen, openSwitch, closeSwitch, switchOrganization, memberData } = useAdminSwitch()
@@ -20,7 +20,7 @@ export const FormTabs = () => {
                   <CustomTopTabButton label='Home' />
                </TabTrigger>
                { canWrite && 
-                  <TabTrigger name='index' href='/forms/write' asChild>
+                  <TabTrigger name='write' href='/forms/write' asChild>
                      <CustomTopTabButton label='Write Forms' />
                   </TabTrigger>
                }

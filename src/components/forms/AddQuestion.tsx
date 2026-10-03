@@ -1,7 +1,7 @@
 import { Heading } from '@/components/ui/heading';
-import QuestionSelect from '@/src/components/forms/QuestionSelect';
-import WriteQuestion from '@/src/components/forms/WriteQuestion';
-import CreateQuestions from '@/src/components/forms/CreateQuestion';
+import QuestionSelect from '@/features/forms/QuestionSelect';
+import WriteQuestion from '@/features/forms/WriteQuestion';
+import CreateQuestions from '@/features/forms/CreateQuestion';
 import type { QuestionBase } from '@/src/types';
 import { useEffect, useState } from 'react';
 import { View } from 'react-native';

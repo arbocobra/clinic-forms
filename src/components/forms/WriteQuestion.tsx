@@ -1,7 +1,7 @@
 import { HStack } from '@/components/ui/hstack'
 import { VStack } from '@/components/ui/vstack'
-import { AddDescriptionCheckbox, DescriptionTextInput, IsRequiredCheckbox, QuestionTextInput, SubmitOrCancelButtons } from '@/src/components/forms/WriteElements';
-import WriteOption from '@/src/components/forms/WriteOption';
+import { AddDescriptionCheckbox, DescriptionTextInput, IsRequiredCheckbox, QuestionTextInput, SubmitOrCancelButtons } from '@/features/forms/WriteElements';
+import WriteOption from '@/features/forms/WriteOption';
 import type { QuestionFormInput, OptionFormInput } from '@/src/types';
 import { useEffect, useState } from 'react';
 import { FieldValues, useFieldArray, useForm, type DefaultValues, useFormContext, FormProvider } from 'react-hook-form';

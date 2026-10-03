@@ -1,7 +1,7 @@
 import { Tabs, TabSlot, TabList, TabTrigger } from 'expo-router/ui';
 import { CustomTopTabList, CustomTopTabButton } from '@/components/custom/tabs';
 import { useAdminSwitch } from '@/src/hooks/useAdminSwitch';
-import { SwitchSheet, SwitchButton } from '@/src/components/top-tabs/OrganizationSwitch';
+import { SwitchSheet, SwitchButton } from '@/features/top-tabs/OrganizationSwitch';
 
 export const ProfileTabs = () => {
    const { canSwitchOrganizations, isOpen, openSwitch, closeSwitch, memberData, switchOrganization } = useAdminSwitch()
