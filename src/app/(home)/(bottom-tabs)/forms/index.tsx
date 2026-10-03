@@ -11,9 +11,9 @@ import { Card } from '@/components/ui/card';
 import { Check, CirclePlus, SquarePen } from 'lucide-react-native';
 import { HStack } from '@/components/ui/hstack';
 import { useAppTheme } from '@/src/contexts/app-theme-context';
-import { Text } from '@/components/custom/text';
-import { Container } from '@/components/custom/wrapper';
-import { Button, AccentButton, TextIconButton } from '@/components/custom/buttons';
+import { Text } from '@components/text';
+import { Container } from '@components/wrappers';
+import { Button, AccentButton, TextIconButton } from '@components/buttons';
 
 export const Page = () => {
   const { resolvedColorMode, toggleColorMode, currentTheme } = useAppTheme()

@@ -8,8 +8,8 @@ import type { Form } from '@/src/types';
 import {FormControl, FormControlError, FormControlErrorIcon, FormControlErrorText, FormControlLabel, FormControlLabelText} from '@/components/ui/form-control'
 import { Input, InputField } from '@/components/ui/input'
 import { CircleAlert } from 'lucide-react-native';
-import { IconButton } from '@/components/custom/buttons'
-import { Container } from '@/components/custom/wrapper'
+import { IconButton } from '@components/buttons'
+import { Container } from '@components/wrappers'
 import { MoveLeft } from 'lucide-react-native';
 
 

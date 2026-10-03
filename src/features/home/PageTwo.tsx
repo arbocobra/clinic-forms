@@ -1,7 +1,7 @@
 import { useColorScheme } from 'react-native'
 import { Heading } from '@/components/ui/heading'
-import { Container } from '@/components/custom/wrapper'
-import { Text } from '@/components/custom/text'
+import { Container } from '@components/wrappers'
+import { Text } from '@components/text'
 
 export const PageTwo = ({ userType }: { userType: string }) => {
   const colourMode = useColorScheme();

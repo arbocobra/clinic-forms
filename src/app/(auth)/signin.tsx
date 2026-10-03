@@ -2,14 +2,14 @@ import { useClerk, useSignIn } from '@clerk/expo'
 import { type Href, useRouter, Stack } from 'expo-router'
 import { useState, useEffect } from 'react'
 import { Pressable, StyleSheet, TextInput, View } from 'react-native'
-import { Container } from '@/components/custom/wrapper'
+import { Container } from '@components/wrappers'
 import { Input, InputField } from '@/components/ui/input'
 import {FormControl, FormControlError, FormControlErrorIcon, FormControlErrorText, FormControlLabel, FormControlLabelText} from '@/components/ui/form-control'
 import { useForm, Controller } from 'react-hook-form';
 import type { LogIn, Verify } from '@/src/types';
 import { CircleAlert, LogIn as LogInIcon } from 'lucide-react-native';
 import { Button, ButtonText, ButtonSpinner, ButtonIcon } from '@/components/ui/button';
-import { Text } from '@/components/custom/text'
+import { Text } from '@components/text'
 
 export const Page = () => {
   const { signIn, fetchStatus } = useSignIn()

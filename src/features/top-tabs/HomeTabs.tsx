@@ -1,5 +1,5 @@
 import { Tabs, TabSlot, TabList, TabTrigger } from 'expo-router/ui';
-import { CustomTopTabList, CustomTopTabButton } from '@/components/custom/tabs';
+import { CustomTopTabList, CustomTopTabButton } from '@components/tabs';
 import { useAdminSwitch } from '@/src/hooks/useAdminSwitch';
 import { SwitchSheet, SwitchButton } from '@features/top-tabs/OrganizationSwitch';
 

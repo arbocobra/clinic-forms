@@ -1,4 +1,4 @@
-import { Text } from '@/components/custom/text';
+import { Text } from '@components/text';
 import { useAuth, useOrganizationList } from '@clerk/expo'
 import { ActivityIndicator, FlatList, Pressable, ScrollView, StyleSheet, View } from 'react-native'
 import { Stack } from 'expo-router';

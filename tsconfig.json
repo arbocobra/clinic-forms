@@ -5,9 +5,8 @@
       "noImplicitAny": false,
       "paths": {
          "@/*": ["./*"],
-         "@/app/*": ["./src/app/*"],
-         "@/gluestack/*": ["./components/ui/*"],
-         "@/features/*": ["./src/features/*"],
+         "@components/*": ["./src/components/*"],
+         "@ui/*": ["./components/ui/*"],
          "@features/*": ["./src/features/*"]
       }
    },

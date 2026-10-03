@@ -3,9 +3,9 @@ import { Heading } from '@/components/ui/heading'
 import { Icon } from '@/components/ui/icon'
 import { SquarePen, Trash, SquareText } from 'lucide-react-native'
 import { Table, TableBody, TableData, TableHead, TableHeader, TableRow } from '@/components/ui/table'
-import { Text } from '@/components/custom/text'
-import { Container } from '@/components/custom/wrapper'
-import { TextIconButton } from '@/components/custom/buttons'
+import { Text } from '@components/text'
+import { Container } from '@components/wrappers'
+import { TextIconButton } from '@components/buttons'
 
 export const Page = () => {
 

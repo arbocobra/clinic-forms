@@ -5,8 +5,8 @@ import { Switch } from '@/components/ui/switch'
 import { HStack } from '@/components/ui/hstack'
 import { Button, ButtonText } from '@/components/ui/button'
 import { useAppTheme } from '@/src/contexts/app-theme-context'
-import { Container } from '@/components/custom/wrapper'
-import { Text } from '@/components/custom/text'
+import { Container } from '@components/wrappers'
+import { Text } from '@components/text'
 import { useUserRoles } from '@/src/hooks/useUserRoles'
 
 export const Page = () => {

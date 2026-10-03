@@ -1,5 +1,5 @@
 import { Tabs, TabSlot, TabList, TabTrigger } from 'expo-router/ui';
-import { CustomBottomTabList, CustomBottomTabButton } from '@/components/custom/tabs';
+import { CustomBottomTabList, CustomBottomTabButton } from '@components/tabs';
 import { BookOpenCheck, House, User } from 'lucide-react-native';
 
 const BottomTabsLayout = () => (

@@ -2,8 +2,8 @@ import { useUser } from '@clerk/expo'
 import { View } from 'react-native'
 import { Heading } from '@/components/ui/heading'
 import { Button, ButtonText } from '@/components/ui/button'
-import { Text } from '@/components/custom/text'
-import { Container } from '@/components/custom/wrapper'
+import { Text } from '@components/text'
+import { Container } from '@components/wrappers'
 import { useAppTheme } from '@/src/contexts/app-theme-context'
 
 const Page = () => {
