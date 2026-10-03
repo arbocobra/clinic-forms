@@ -3,7 +3,7 @@ import '@/src/global.css';
 import { ClerkProvider } from '@clerk/expo';
 import { tokenCache } from '@clerk/expo/token-cache';
 import { Slot } from 'expo-router';
-import SplashScreen from '@/components/custom/splash-screen/index';
+import { SplashScreen } from '@features/splash-screen/index';
 import * as SplashScreenExpo from 'expo-splash-screen';
 import { AppThemeProvider, useAppTheme } from '@/src/contexts/app-theme-context';
 import { StatusBar } from 'expo-status-bar';
@@ -41,7 +41,7 @@ export const RootLayout = () => {
 
     const timer = setTimeout(() => {
       setIsReady(true);
-    }, 1000)
+    }, 3000)
 
     return () => clearTimeout(timer)
   }, [])

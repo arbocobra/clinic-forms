@@ -7,7 +7,8 @@
          "@/*": ["./*"],
          "@/app/*": ["./src/app/*"],
          "@/gluestack/*": ["./components/ui/*"],
-         "@/features/*": ["./src/components/*"]
+         "@/features/*": ["./src/features/*"],
+         "@features/*": ["./src/features/*"]
       }
    },
    "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts", "nativewind-env.d.ts", "src/types/global.d.ts"],

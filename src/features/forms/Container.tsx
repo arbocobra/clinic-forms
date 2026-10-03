@@ -1,8 +1,8 @@
 import { VStack } from '@/components/ui/vstack';
 import { Divider } from '@/components/ui/divider';
-import AddQuestion from '@/features/forms/AddQuestion';
-import DisplayPreview from '@/features/forms/DisplayPreview';
-import QuestionList from '@/features/forms/QuestionList';
+import AddQuestion from '@features/forms/AddQuestion';
+import DisplayPreview from '@features/forms/DisplayPreview';
+import QuestionList from '@features/forms/QuestionList';
 import type { Question, QuestionBase, QuestionDisplay, QuestionFormInput } from '@/src/types';
 import { useEffect, useState } from 'react';
 

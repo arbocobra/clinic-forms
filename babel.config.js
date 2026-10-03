@@ -13,7 +13,8 @@ module.exports = function (api) {
                   '@/': '.',
                   '@/app': './src/app',
                   '@/gluestack': './components/ui',
-                  '@/features': './src/components',
+                  '@/features': './src/features',
+                  '@features': './src/features',
                   'tailwind.config': './tailwind.config.js',
                },
             },
@@ -22,3 +23,13 @@ module.exports = function (api) {
       ],
    };
 };
+
+/* 
+   @/ = 183/48 || 182/49
+ 
+   @/src = 29/26 || 
+   @/components/ui = 100/31 -- 129 || -- 129
+   @/components/custom = 29/17 -- 157 || 27/15 -- 156
+   @/features = 25/20 -- 182 || 26/21 -- 182
+   @/app = 0 || 
+*/

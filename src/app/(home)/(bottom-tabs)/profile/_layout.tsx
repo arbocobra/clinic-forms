@@ -1,4 +1,4 @@
-import { ProfileTabs } from '@/features/top-tabs/ProfileTabs';
+import { ProfileTabs } from '@features/top-tabs/ProfileTabs';
 
 const Layout = () => <ProfileTabs />
 
