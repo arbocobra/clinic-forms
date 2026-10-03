@@ -7,6 +7,7 @@ import { Button, ButtonText } from '@/components/ui/button'
 import { useAppTheme } from '@/src/contexts/app-theme-context'
 import { Container } from '@/components/custom/wrapper'
 import { Text } from '@/components/custom/text'
+import { useUserRoles } from '@/src/hooks/useUserRoles'
 
 export const Page = () => {
 
@@ -14,12 +15,15 @@ export const Page = () => {
   const { resolvedColorMode, toggleColorMode } = useAppTheme()
 
   const isDarkMode = resolvedColorMode === 'dark'
+  const { roleTest, segments } = useUserRoles()
 
   return (
     <Container>
       <Heading size='xl'>Profile Page</Heading>
       <VStack space='md'>
         <Text className='bold'>Change Colour Mode</Text>
+        <Text>{roleTest}</Text>
+        <Text>{segments.map(s => s)}</Text>
         <HStack space='md' className='items-center'>
           <Switch value={isDarkMode} onValueChange={toggleColorMode} />
           <Text className='capitalize text-secondary-foreground'>{resolvedColorMode}</Text>

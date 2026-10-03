@@ -5,7 +5,6 @@ import type { LucideIcon } from 'lucide-react-native';
 import { Icon } from '@/components/ui/icon';
 
 export const CustomTopTabList = ({route = '', children}) => {
-
    // change to [route, names].includes(route) when list is >1
    const isHidden = route == 'create'
    
@@ -40,6 +39,12 @@ export const CustomBottomTabButton = ({ label, icon, isFocused, ref: _ref, ...tr
       </Text>
   </Pressable>
 );
+
+// export const SwitchButton = ({action, isOpen}) => (
+//    <Button onPress={action} size='lg' variant='secondary' className={`p-2 h-11 w-11 ml-2 mr-3 rounded-full ${isOpen && 'bg-accent'}`}>
+//       <ButtonIcon className={`h-7 w-7 stroke-2.5 ${isOpen ? 'stroke-background' : 'stroke-accent'}`} as={Bolt} />
+//    </Button>
+// )
 
 const styles = StyleSheet.create({
    topTabList: {

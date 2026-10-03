@@ -10,9 +10,6 @@ declare global {
       },
       memberships: {
          [key:string]:string
-      },
-      metadata?: {
-         role?: Roles
       }
   }
 }

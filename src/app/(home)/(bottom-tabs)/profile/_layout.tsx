@@ -1,19 +1,5 @@
-import { Tabs, TabSlot, TabList, TabTrigger } from 'expo-router/ui';
-import { CustomTopTabList, CustomTopTabButton } from '@/components/custom/tabs';
+import { ProfileTabs } from '@/src/components/top-tabs/ProfileTabs';
 
-const Layout = () => {
-   return (
-      <Tabs>
-         <TabList asChild>
-            <CustomTopTabList>
-               <TabTrigger name='index' href='/profile' asChild>
-                  <CustomTopTabButton label='Profile' />
-               </TabTrigger>
-            </CustomTopTabList>
-         </TabList>
-         <TabSlot />
-      </Tabs>
-   )
-}
+const Layout = () => <ProfileTabs />
 
 export default Layout;
