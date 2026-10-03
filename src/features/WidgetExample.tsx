@@ -1,7 +1,7 @@
-import { Button, ButtonText } from '@/components/ui/button';
-import { FormControl, FormControlLabel, FormControlLabelText } from '@/components/ui/form-control';
-import { HStack } from '@/components/ui/hstack';
-import { Select, SelectBackdrop, SelectContent, SelectDragIndicator, SelectDragIndicatorWrapper, SelectIcon, SelectInput, SelectItem, SelectPortal, SelectTrigger } from '@/components/ui/select';
+import { Button, ButtonText } from '@ui/button';
+import { FormControl, FormControlLabel, FormControlLabelText } from '@ui/form-control';
+import { HStack } from '@ui/hstack';
+import { Select, SelectBackdrop, SelectContent, SelectDragIndicator, SelectDragIndicatorWrapper, SelectIcon, SelectInput, SelectItem, SelectPortal, SelectTrigger } from '@ui/select';
 import { ChevronDownIcon } from 'lucide-react-native';
 import { useController, useForm } from 'react-hook-form';
 import { StyleSheet } from 'react-native';

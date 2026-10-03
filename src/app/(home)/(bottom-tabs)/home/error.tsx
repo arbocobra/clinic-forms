@@ -1,9 +1,9 @@
 import { ScrollView, Text } from 'react-native'
-import { VStack } from '@/components/ui/vstack'
-import { Heading } from '@/components/ui/heading'
-import { Center } from '@/components/ui/center'
+import { VStack } from '@ui/vstack'
+import { Heading } from '@ui/heading'
+import { Center } from '@ui/center'
 import { styles } from '@/src/constants/styles'
-import { Button, ButtonText } from '@/components/ui/button'
+import { Button, ButtonText } from '@ui/button'
 import { useClerk } from '@clerk/expo'
 
 const Page = () => {

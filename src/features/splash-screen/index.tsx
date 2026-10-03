@@ -1,5 +1,5 @@
-import { Heading } from '@/components/ui/heading'
-import { Center } from '@/components/ui/center'
+import { Heading } from '@ui/heading'
+import { Center } from '@ui/center'
 
 export const SplashScreen = () => {
    return (

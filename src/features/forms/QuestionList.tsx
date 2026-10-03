@@ -1,7 +1,7 @@
-import { Table, TableBody, TableData, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { VStack } from '@/components/ui/vstack';
-import { Heading } from '@/components/ui/heading';
-import { Icon } from '@/components/ui/icon';
+import { Table, TableBody, TableData, TableHead, TableHeader, TableRow } from '@ui/table';
+import { VStack } from '@ui/vstack';
+import { Heading } from '@ui/heading';
+import { Icon } from '@ui/icon';
 import type { Question } from '@/src/types';
 import { SquarePen, Trash } from 'lucide-react-native';
 import { Text } from 'react-native';

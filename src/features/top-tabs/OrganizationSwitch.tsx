@@ -1,5 +1,5 @@
-import { Actionsheet, ActionsheetBackdrop, ActionsheetContent, ActionsheetItem, ActionsheetDragIndicator, ActionsheetDragIndicatorWrapper, ActionsheetSectionHeaderText, ActionsheetItemText } from '@/components/ui/actionsheet';
-import { Button, ButtonIcon } from '@/components/ui/button';
+import { Actionsheet, ActionsheetBackdrop, ActionsheetContent, ActionsheetItem, ActionsheetDragIndicator, ActionsheetDragIndicatorWrapper, ActionsheetSectionHeaderText, ActionsheetItemText } from '@ui/actionsheet';
+import { Button, ButtonIcon } from '@ui/button';
 import { Bolt } from 'lucide-react-native';
 
 type DataType = { id:string, role:string, roleName:string }

@@ -1,5 +1,5 @@
 import { ScrollView, StyleSheet, type ScrollViewProps } from 'react-native';
-import { VStack } from '@/components/ui/vstack'
+import { VStack } from '@ui/vstack'
 
 interface ContainerProps extends ScrollViewProps {
   children: React.ReactNode;

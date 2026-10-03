@@ -1,7 +1,7 @@
 import { useAuth } from '@clerk/expo';
 import { Redirect, Stack, useSegments, type Href } from 'expo-router';
-import { Spinner } from '@/components/ui/spinner';
-import { Center } from '@/components/ui/center';
+import { Spinner } from '@ui/spinner';
+import { Center } from '@ui/center';
 import { useUserRoles } from '@/src/hooks/useUserRoles';
 
 const Layout = () => {

@@ -1,9 +1,9 @@
-import { FormControl, FormControlHelper, FormControlHelperText, FormControlLabel, FormControlLabelText } from '@/components/ui/form-control';
-import { HStack } from '@/components/ui/hstack'
-import { VStack } from '@/components/ui/vstack'
-import { Input, InputField } from '@/components/ui/input'
-import { Radio, RadioGroup, RadioIcon, RadioIndicator, RadioLabel } from '@/components/ui/radio'
-import { Textarea, TextareaInput } from '@/components/ui/textarea'
+import { FormControl, FormControlHelper, FormControlHelperText, FormControlLabel, FormControlLabelText } from '@ui/form-control';
+import { HStack } from '@ui/hstack'
+import { VStack } from '@ui/vstack'
+import { Input, InputField } from '@ui/input'
+import { Radio, RadioGroup, RadioIcon, RadioIndicator, RadioLabel } from '@ui/radio'
+import { Textarea, TextareaInput } from '@ui/textarea'
 import type { QuestionDisplay } from '@/src/types';
 import { Circle } from 'lucide-react-native';
 import { useEffect } from 'react';

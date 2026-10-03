@@ -1,5 +1,5 @@
-import { VStack } from '@/components/ui/vstack';
-import { Divider } from '@/components/ui/divider';
+import { VStack } from '@ui/vstack';
+import { Divider } from '@ui/divider';
 import AddQuestion from '@features/forms/AddQuestion';
 import DisplayPreview from '@features/forms/DisplayPreview';
 import QuestionList from '@features/forms/QuestionList';

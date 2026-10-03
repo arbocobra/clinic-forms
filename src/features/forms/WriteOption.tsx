@@ -2,10 +2,10 @@ import { AddOptionRow, Error, SubmitOrCancelButtons } from '@features/forms/Writ
 import type { Option, OptionFormInput } from '@/src/types';
 import { useEffect, useState } from 'react';
 import { Controller, useForm, type DefaultValues } from 'react-hook-form';
-import { FormControl, FormControlHelper, FormControlHelperText, FormControlLabel, FormControlLabelText, FormControlError, FormControlErrorIcon, FormControlErrorText } from '@/components/ui/form-control';
-import { Card } from '@/components/ui/card'
-import { Input, InputField } from '@/components/ui/input'
-import { VStack } from '@/components/ui/vstack'
+import { FormControl, FormControlHelper, FormControlHelperText, FormControlLabel, FormControlLabelText, FormControlError, FormControlErrorIcon, FormControlErrorText } from '@ui/form-control';
+import { Card } from '@ui/card'
+import { Input, InputField } from '@ui/input'
+import { VStack } from '@ui/vstack'
 
 
 const WriteOption = ({current, selection, append}) => {

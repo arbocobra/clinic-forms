@@ -1,4 +1,4 @@
-import { Button as GSButton, ButtonText, ButtonIcon } from '@/components/ui/button';
+import { Button as GSButton, ButtonText, ButtonIcon } from '@ui/button';
 import type { PressableProps  } from 'react-native';
 import type { LucideIcon } from 'lucide-react-native';
 

@@ -1,4 +1,4 @@
-import { Heading } from '@/components/ui/heading';
+import { Heading } from '@ui/heading';
 import QuestionSelect from '@features/forms/QuestionSelect';
 import WriteQuestion from '@features/forms/WriteQuestion';
 import CreateQuestions from '@features/forms/CreateQuestion';

@@ -1,5 +1,5 @@
 import { useColorScheme } from 'react-native'
-import { Heading } from '@/components/ui/heading'
+import { Heading } from '@ui/heading'
 import { Container } from '@components/wrappers'
 import { Text } from '@components/text'
 

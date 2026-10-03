@@ -1,7 +1,7 @@
 import { useAuth, useClerk, useUser } from '@clerk/expo'
 import { ScrollView, StyleSheet, Text, useColorScheme } from 'react-native'
-import { VStack } from '@/components/ui/vstack'
-import { Center } from '@/components/ui/center'
+import { VStack } from '@ui/vstack'
+import { Center } from '@ui/center'
 
 const Page = () => {
 

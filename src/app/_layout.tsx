@@ -1,4 +1,4 @@
-import { GluestackUIProvider } from '@/components/ui/gluestack-ui-provider';
+import { GluestackUIProvider } from '@ui/gluestack-ui-provider';
 import '@/src/global.css';
 import { ClerkProvider } from '@clerk/expo';
 import { tokenCache } from '@clerk/expo/token-cache';

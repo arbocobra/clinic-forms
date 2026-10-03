@@ -1,7 +1,7 @@
-import { Button, ButtonText,  } from '@/components/ui/button';
-import { HStack } from '@/components/ui/hstack';
-import { Select, SelectBackdrop, SelectContent, SelectDragIndicator, SelectDragIndicatorWrapper, SelectIcon, SelectInput, SelectItem, SelectPortal, SelectTrigger } from '@/components/ui/select';
-import {FormControl, FormControlError, FormControlErrorIcon, FormControlErrorText, FormControlLabel, FormControlLabelText} from '@/components/ui/form-control'
+import { Button, ButtonText,  } from '@ui/button';
+import { HStack } from '@ui/hstack';
+import { Select, SelectBackdrop, SelectContent, SelectDragIndicator, SelectDragIndicatorWrapper, SelectIcon, SelectInput, SelectItem, SelectPortal, SelectTrigger } from '@ui/select';
+import {FormControl, FormControlError, FormControlErrorIcon, FormControlErrorText, FormControlLabel, FormControlLabelText} from '@ui/form-control'
 import { questionBase } from '@/src/constants/questions';
 import type { QuestionBase } from '@/src/types';
 import { ChevronDownIcon, CircleAlert } from 'lucide-react-native';

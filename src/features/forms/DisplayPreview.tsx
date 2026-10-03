@@ -1,7 +1,7 @@
 import { DisplayShortText, DisplayLongText, DisplayTrueFalse, DisplaySingleSelectText } from '@features/InputDisplays';
-import { Card } from '@/components/ui/card';
-import { Heading } from '@/components/ui/heading';
-import { VStack } from '@/components/ui/vstack';
+import { Card } from '@ui/card';
+import { Heading } from '@ui/heading';
+import { VStack } from '@ui/vstack';
 import type { QuestionBase, QuestionDisplay } from '@/src/types';
 import { Text } from 'react-native';
 import { useState } from 'react';
