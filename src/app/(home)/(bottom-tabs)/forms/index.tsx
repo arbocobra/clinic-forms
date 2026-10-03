@@ -10,7 +10,7 @@ import { Text as DefaultText } from 'react-native';
 import { Card } from '@ui/card';
 import { Check, CirclePlus, SquarePen } from 'lucide-react-native';
 import { HStack } from '@ui/hstack';
-import { useAppTheme } from '@/src/contexts/app-theme-context';
+import { useAppTheme } from '@/contexts/app-theme-context';
 import { Text } from '@components/text';
 import { Container } from '@components/wrappers';
 import { Button, AccentButton, TextIconButton } from '@components/buttons';

@@ -2,7 +2,7 @@ import { DisplayShortText, DisplayLongText, DisplayTrueFalse, DisplaySingleSelec
 import { Card } from '@ui/card';
 import { Heading } from '@ui/heading';
 import { VStack } from '@ui/vstack';
-import type { QuestionBase, QuestionDisplay } from '@/src/types';
+import type { QuestionBase, QuestionDisplay } from '@/types';
 import { Text } from 'react-native';
 import { useState } from 'react';
 import {

@@ -1,5 +1,5 @@
 // import WriteOption from '@features/forms/WriteOption';
-import type { QuestionFormInput, OptionFormInput, QuestionBase, Option } from '@/src/types';
+import type { QuestionFormInput, OptionFormInput, QuestionBase, Option } from '@/types';
 import { useEffect, useState, Dispatch, SetStateAction } from 'react';
 import { Controller, useFieldArray, useForm, useFormContext, FormProvider } from 'react-hook-form';
 import type { DefaultValues, SubmitHandler, FieldArrayWithId, UseFieldArrayAppend, FieldValues, Field } from 'react-hook-form';

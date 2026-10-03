@@ -1,7 +1,7 @@
 import { Tabs, TabSlot, TabList, TabTrigger } from 'expo-router/ui';
 import { CustomTopTabList, CustomTopTabButton } from '@components/tabs';
-import { useAdminSwitch } from '@/src/hooks/useAdminSwitch';
-import { useUserRoles } from '@/src/hooks/useUserRoles';
+import { useAdminSwitch } from '@/hooks/useAdminSwitch';
+import { useUserRoles } from '@/hooks/useUserRoles';
 import { SwitchSheet, SwitchButton } from '@features/top-tabs/OrganizationSwitch';
 
 export const FormTabs = () => {

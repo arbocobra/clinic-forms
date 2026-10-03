@@ -1,4 +1,4 @@
-import { ThemeName, ColorMode, getThemeVars, themeConfigs } from '@/src/constants/theme';
+import { ThemeName, ColorMode, getThemeVars, themeConfigs } from '@/constants/theme';
 import { VariableContextProvider } from 'nativewind';
 import { Appearance, ColorSchemeName, useColorScheme, View } from 'react-native';
 import { createContext, useState, useMemo, useContext, useEffect, ReactNode, useCallback } from 'react';

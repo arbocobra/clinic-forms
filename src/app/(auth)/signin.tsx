@@ -6,7 +6,7 @@ import { Container } from '@components/wrappers'
 import { Input, InputField } from '@ui/input'
 import {FormControl, FormControlError, FormControlErrorIcon, FormControlErrorText, FormControlLabel, FormControlLabelText} from '@ui/form-control'
 import { useForm, Controller } from 'react-hook-form';
-import type { LogIn, Verify } from '@/src/types';
+import type { LogIn, Verify } from '@/types';
 import { CircleAlert, LogIn as LogInIcon } from 'lucide-react-native';
 import { Button, ButtonText, ButtonSpinner, ButtonIcon } from '@ui/button';
 import { Text } from '@components/text'

@@ -4,10 +4,10 @@ import { Heading } from '@ui/heading'
 import { Switch } from '@ui/switch'
 import { HStack } from '@ui/hstack'
 import { Button, ButtonText } from '@ui/button'
-import { useAppTheme } from '@/src/contexts/app-theme-context'
+import { useAppTheme } from '@/contexts/app-theme-context'
 import { Container } from '@components/wrappers'
 import { Text } from '@components/text'
-import { useUserRoles } from '@/src/hooks/useUserRoles'
+import { useUserRoles } from '@/hooks/useUserRoles'
 
 export const Page = () => {
 

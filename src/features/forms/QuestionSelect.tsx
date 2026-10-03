@@ -2,8 +2,8 @@ import { Button, ButtonText,  } from '@ui/button';
 import { HStack } from '@ui/hstack';
 import { Select, SelectBackdrop, SelectContent, SelectDragIndicator, SelectDragIndicatorWrapper, SelectIcon, SelectInput, SelectItem, SelectPortal, SelectTrigger } from '@ui/select';
 import {FormControl, FormControlError, FormControlErrorIcon, FormControlErrorText, FormControlLabel, FormControlLabelText} from '@ui/form-control'
-import { questionBase } from '@/src/constants/questions';
-import type { QuestionBase } from '@/src/types';
+import { questionBase } from '@/constants/questions';
+import type { QuestionBase } from '@/types';
 import { ChevronDownIcon, CircleAlert } from 'lucide-react-native';
 import { useController, useForm, type DefaultValues, type FieldErrors } from 'react-hook-form';
 

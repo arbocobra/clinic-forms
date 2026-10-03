@@ -2,7 +2,7 @@ import { Table, TableBody, TableData, TableHead, TableHeader, TableRow } from '@
 import { VStack } from '@ui/vstack';
 import { Heading } from '@ui/heading';
 import { Icon } from '@ui/icon';
-import type { Question } from '@/src/types';
+import type { Question } from '@/types';
 import { SquarePen, Trash } from 'lucide-react-native';
 import { Text } from 'react-native';
 //"group/radio flex-row justify-start items-center web:cursor-pointer data-[disabled=true]:web:cursor-not-allowed data-[disabled=true]:opacity-50 gap-2 disabled:opacity-100"

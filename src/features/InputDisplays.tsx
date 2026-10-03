@@ -4,7 +4,7 @@ import { VStack } from '@ui/vstack'
 import { Input, InputField } from '@ui/input'
 import { Radio, RadioGroup, RadioIcon, RadioIndicator, RadioLabel } from '@ui/radio'
 import { Textarea, TextareaInput } from '@ui/textarea'
-import type { QuestionDisplay } from '@/src/types';
+import type { QuestionDisplay } from '@/types';
 import { Circle } from 'lucide-react-native';
 import { useEffect } from 'react';
 import { Text } from 'react-native';

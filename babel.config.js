@@ -10,10 +10,10 @@ module.exports = function (api) {
             {
                root: ['.'],
                alias: {
-                  '@/': '.',
+                  '@/': './src',
                   '@components': './src/components',
-                  '@ui': './components/ui',
                   '@features': './src/features',
+                  '@ui': './components/ui',
                   'tailwind.config': './tailwind.config.js',
                },
             },
@@ -24,11 +24,20 @@ module.exports = function (api) {
 };
 
 /* 
-   @/ = 183/48 || 182/49
- 
-   @/src = 29/26 || 
-   @/components/ui = 100/31 -- 129 || -- 129
-   @/components/custom = 29/17 -- 157 || 27/15 -- 156
-   @/features = 25/20 -- 182 || 26/21 -- 182
-   @/app = 0 || 
+   @/ = 29/26
+   @ = 202
+
+   @/src = 29/26
+   @/ = 29/26 // Match
+
+   @components = 27/15
+   @features = 26/21 -- 53
+   @ui = 100/31 -- 153
+
+   @[NOT /] = 173/53 // matches total + @[NOT components|features|ui|/src] = 20/18
+   @[NOT components|features|ui] = 49/33
+   @[NOT components|features|ui|/src] = 20/18
+
+   @clerk = 19/17
+   @react-native-async-storage = 1/1 -- 20 // matches @[NOT components|features|ui|/src]
 */

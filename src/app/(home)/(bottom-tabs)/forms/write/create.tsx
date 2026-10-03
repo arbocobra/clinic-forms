@@ -4,7 +4,7 @@ import { Heading } from '@ui/heading'
 import { Stack, useRouter } from 'expo-router';
 import { useForm, useFieldArray, Controller } from 'react-hook-form';
 import type { DefaultValues } from 'react-hook-form';
-import type { Form } from '@/src/types';
+import type { Form } from '@/types';
 import {FormControl, FormControlError, FormControlErrorIcon, FormControlErrorText, FormControlLabel, FormControlLabelText} from '@ui/form-control'
 import { Input, InputField } from '@ui/input'
 import { CircleAlert } from 'lucide-react-native';

@@ -2,7 +2,7 @@ import { useAuth } from '@clerk/expo';
 import { Redirect, Stack, useSegments, type Href } from 'expo-router';
 import { Spinner } from '@ui/spinner';
 import { Center } from '@ui/center';
-import { useUserRoles } from '@/src/hooks/useUserRoles';
+import { useUserRoles } from '@/hooks/useUserRoles';
 
 const Layout = () => {
    const { isLoaded, destination, isRedirect, roles } = useUserRoles();

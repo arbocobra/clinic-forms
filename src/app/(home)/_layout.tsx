@@ -3,7 +3,7 @@ import { Redirect, Stack, useRouter, useRootNavigationState  } from 'expo-router
 import { View, Text } from 'react-native'
 import { useEffect, useState } from 'react';
 import type { UserResource } from '@clerk/expo/types'
-import type { UserOrgData } from '@/src/types'
+import type { UserOrgData } from '@/types'
 
 const Layout = () => {
 

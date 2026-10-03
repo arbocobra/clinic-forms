@@ -2,7 +2,7 @@ import { ScrollView, Text } from 'react-native'
 import { VStack } from '@ui/vstack'
 import { Heading } from '@ui/heading'
 import { Center } from '@ui/center'
-import { styles } from '@/src/constants/styles'
+import { styles } from '@/constants/styles'
 import { Button, ButtonText } from '@ui/button'
 import { useClerk } from '@clerk/expo'
 

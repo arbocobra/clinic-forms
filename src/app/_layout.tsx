@@ -5,7 +5,7 @@ import { tokenCache } from '@clerk/expo/token-cache';
 import { Slot } from 'expo-router';
 import { SplashScreen } from '@features/splash-screen/index';
 import * as SplashScreenExpo from 'expo-splash-screen';
-import { AppThemeProvider, useAppTheme } from '@/src/contexts/app-theme-context';
+import { AppThemeProvider, useAppTheme } from '@/contexts/app-theme-context';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';

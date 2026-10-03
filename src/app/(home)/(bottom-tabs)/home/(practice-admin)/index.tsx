@@ -4,7 +4,7 @@ import { Heading } from '@ui/heading'
 import { Button, ButtonText } from '@ui/button'
 import { Text } from '@components/text'
 import { Container } from '@components/wrappers'
-import { useAppTheme } from '@/src/contexts/app-theme-context'
+import { useAppTheme } from '@/contexts/app-theme-context'
 
 const Page = () => {
 

@@ -3,7 +3,7 @@ import { Divider } from '@ui/divider';
 import AddQuestion from '@features/forms/AddQuestion';
 import DisplayPreview from '@features/forms/DisplayPreview';
 import QuestionList from '@features/forms/QuestionList';
-import type { Question, QuestionBase, QuestionDisplay, QuestionFormInput } from '@/src/types';
+import type { Question, QuestionBase, QuestionDisplay, QuestionFormInput } from '@/types';
 import { useEffect, useState } from 'react';
 
 const initialValue:QuestionDisplay = {label:'', description: '', required: true, options: []}

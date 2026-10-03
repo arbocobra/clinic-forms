@@ -1,5 +1,5 @@
 import { AddOptionRow, Error, SubmitOrCancelButtons } from '@features/forms/WriteElements';
-import type { Option, OptionFormInput } from '@/src/types';
+import type { Option, OptionFormInput } from '@/types';
 import { useEffect, useState } from 'react';
 import { Controller, useForm, type DefaultValues } from 'react-hook-form';
 import { FormControl, FormControlHelper, FormControlHelperText, FormControlLabel, FormControlLabelText, FormControlError, FormControlErrorIcon, FormControlErrorText } from '@ui/form-control';

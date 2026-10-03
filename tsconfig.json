@@ -4,10 +4,10 @@
       "strict": true,
       "noImplicitAny": false,
       "paths": {
-         "@/*": ["./*"],
+         "@/*": ["./src/*"],
          "@components/*": ["./src/components/*"],
-         "@ui/*": ["./components/ui/*"],
-         "@features/*": ["./src/features/*"]
+         "@features/*": ["./src/features/*"],
+         "@ui/*": ["./components/ui/*"]
       }
    },
    "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts", "nativewind-env.d.ts", "src/types/global.d.ts"],

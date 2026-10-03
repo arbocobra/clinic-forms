@@ -11,7 +11,7 @@ import { Input, InputField } from '@ui/input'
 
 import { Controller, type UseFormHandleSubmit, type SubmitHandler } from 'react-hook-form';
 import { Pressable, Text } from 'react-native';
-import type { OptionFormInput } from '@/src/types'
+import type { OptionFormInput } from '@/types'
 
 type SubmitOrCancelButtonsProps = { 
    handleSubmit:UseFormHandleSubmit<OptionFormInput>, 
